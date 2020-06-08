@@ -1,0 +1,65 @@
+@import '../../styles/_variables.scss';
+
+.AcquaintedBlock{
+	$self: &;
+	text-align: center;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 160px;
+	padding-bottom: 160px;
+
+	h2{
+		font-size: 50px;
+		line-height: 54px;
+		margin-bottom: 85px;
+	}
+
+	&__content{
+		text-align: justify;
+
+
+		img{
+			width: 340px;
+		}
+
+		display: grid;
+		grid-template-columns: 390px auto;
+
+
+		#{$self}__text{
+			p{
+				font-size: 16px;
+				line-height: 24px;
+				margin-bottom: 25px;
+			}
+
+			h3{
+				font-size: 24px;
+				line-height: 29px;
+				margin-bottom: 25px;
+			}
+
+			a{
+				text-decoration: none;
+				color: $primary;
+				font-weight: 600;
+			}
+		}
+
+		@media screen and (max-width: 2560px){
+
+		}
+
+		@media screen and (max-width: 1024px){
+			
+		}
+
+		@media screen and (max-width: 768px){
+		}
+
+		@media screen and (max-width: 360px){
+
+		}
+	}
+	
+}

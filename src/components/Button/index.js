@@ -1,9 +1,9 @@
 import React from 'react';
 import './Button.scss'
 
-const Button = props => (
+const Button = ({text}) => (
 	<div className="Button">
-		<input type="submit" className="Button__input"/>
+		<input type="submit" className="Button__input" value={text}/>
 	</div>
 );
 

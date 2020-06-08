@@ -2,16 +2,22 @@ import React from 'react';
 
 import './Home.scss'
 
-import { Header, Navigation, PreviewBlock} from '../../components/index'
+import { Header, 
+	    Navigation, 
+	    PreviewBlock, 
+	    AcquaintedBlock} from '../../components/index'
 
 const Home = props => {
 	return (
-		<div className="container">
+		<React.Fragment>
 			<Header>
-				<Navigation />
+					<Navigation />
 			</Header>
-			<PreviewBlock />	
-		</div>
+			<div className="container">
+				<PreviewBlock />
+				<AcquaintedBlock />	
+			</div>
+		</React.Fragment>
 	);
 }
 
