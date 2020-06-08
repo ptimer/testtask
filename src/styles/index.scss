@@ -1,0 +1,14 @@
+@import '~reset-css';
+
+*{
+	box-sizing: border-box;
+}
+
+body, html, #root, .wrapper{
+	height: 100%;
+	width: 100%;
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}

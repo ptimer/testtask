@@ -1,11 +1,11 @@
 import React from 'react';
-//import { Home } from './pages/index'
+import { Home } from './pages/index'
 
 function App() {
   return (
-    <React.Fragment>
-      
-    </React.Fragment>
+    <div class="wrapper">
+      <Home />
+    </div>
   );
 }
 
