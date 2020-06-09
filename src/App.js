@@ -3,7 +3,7 @@ import { Home } from './pages/index'
 
 function App() {
   return (
-    <div class="wrapper">
+    <div className="wrapper">
       <Home />
     </div>
   );

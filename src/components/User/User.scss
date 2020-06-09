@@ -1,0 +1,29 @@
+.User{
+	width: 200px;
+	margin-bottom: 60px;
+
+	img{
+		border-radius: 50%;
+	}
+
+	.User__name{
+		margin-top: 20px;
+		font-size: 24px;
+		line-height: 29px;
+		margin-bottom: 25px;
+		margin-bottom: 21px;
+	}
+
+	span{
+		display: block;
+	}
+
+	.User__position{
+		margin-bottom: 12px;
+		word-wrap: break-word;
+	}
+
+	.User__email{
+		margin-bottom: 12px;
+	}
+}
