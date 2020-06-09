@@ -1,9 +1,9 @@
 import React from 'react';
 import './Button.scss'
 
-const Button = ({text}) => (
+const Button = ({text, onClick, showButton}) => (
 	<div className="Button">
-		<input type="submit" className="Button__input" value={text}/>
+		{onClick ? <input onClick={onClick} type="button" className="Button__input" value={text}/> : <input type="button" className="Button__input" value={text}/>}
 	</div>
 );
 

@@ -2,39 +2,13 @@ import React from 'react';
 
 import { UsersBlock, User } from '../../../components/index';
 
-class UsersList extends React.Component{
+const UsersList = ({showMore, showButton, items}) => {
 
-	constructor(props){
-		super(props);
-
-		this.state = {
-			items: [],
-			isLoaded: false
-		}
-	}
-
-	componentDidMount(){
-		fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6')
-		.then(function(response) {
-		 return response.json();
-		})
-		.then(data => {
-			console.log(data);
-			 if(data.success) {
-			   this.setState({items: data.users})
-			 } else {
-			   // proccess server errors
-			 }
-		})
-	}
-
-	render(){
-		return (
+	return (
 			<div className="UsersList">
-					<UsersBlock>
+					<UsersBlock handleClick={(e) => showMore(e)} showButton={showButton}>
 						{
-							this.state.items
-							.map(item => <User key={item.id} user={{img: item.photo,
+							items.map(item => <User key={item.id} user={{img: item.photo,
 																	name: item.name, 
 																	phone: item.phone, 
 																	position: item.position, 
@@ -42,8 +16,7 @@ class UsersList extends React.Component{
 						}
 					</UsersBlock>
 			</div>
-		)
-	}
+	)
 }
 
 export default UsersList;

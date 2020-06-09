@@ -3,19 +3,18 @@ import './UsersBlock.scss';
 
 import { Button } from '../index'
 
-const UsersBlock = ({children}) => (
-	<div className="UsersBlock">
-		<h2>Let's get acquainted</h2>
-		<p>Attention! Sorting users by registration date</p>
-		<div className="UsersBlock__users">
-			{children}
-		</div>
+function UsersBlock ({children, handleClick, showButton}){
 
-		<div className="UsersBlock__button">
-			<Button text="Show more" />
-		</div>
-		
-	</div>
-);
+	return (<div className="UsersBlock">
+			<h2>Let's get acquainted</h2>
+			<p>Attention! Sorting users by registration date</p>
+			<div className="UsersBlock__users">
+				{children}
+			</div>
+			
+			{ showButton ? <div className="UsersBlock__button"><Button text="Show more" onClick={handleClick} /></div> : '' }
+			
+		</div>)
+};
 
 export default UsersBlock;
