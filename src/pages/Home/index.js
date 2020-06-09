@@ -6,7 +6,8 @@ import { Header,
 	    Navigation, 
 	    PreviewBlock, 
 	    AcquaintedBlock,
-		UsersBlock} from '../../components/index';
+		UsersBlock,
+		Footer} from '../../components/index';
 
 import { UsersList, RegisterForm } from '../../modules/index';
 
@@ -22,6 +23,7 @@ const Home = props => {
 				<UsersList />
 				<RegisterForm />
 			</div>
+			<Footer />
 		</React.Fragment>
 	);
 }
