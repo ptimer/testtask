@@ -3,7 +3,7 @@ import React from 'react';
 import {Button} from '../../../components/index'
 import './RegisterForm.scss'
 
-const RegisterForm = (props) => (
+const RegisterForm = ({positions}) => (
 	<div className="RegisterForm">
 		<h2>Register to get a work</h2>
 		<p>Attention! After successful registration and alert, update
@@ -60,12 +60,17 @@ const RegisterForm = (props) => (
 			   name="pos4" value="pos4" />
 			  <label for="pos4">QA developer</label> */}
 			  <label for="radio_block">Select your position</label>
+
 			  <div className="radio_block">
-					<label class="control radio">
-					  <input id="radio1" name="radio" type="radio"/>
-					  <span class="control__indicator"></span>
-					  Toggle this custom radio
-				   </label>
+					{positions.map(p => {
+					  	return (
+							<label class="control radio">
+							  <input id={`radio-${p.id}`} name="radio" type="radio"/>
+							  <span class="control__indicator"></span>
+							  {p.name}
+						   </label>
+					  	);
+					})}
 			  </div>
 				
 			  <label for="image_block">Photo</label>
