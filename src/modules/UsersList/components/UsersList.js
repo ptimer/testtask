@@ -2,58 +2,48 @@ import React from 'react';
 
 import { UsersBlock, User } from '../../../components/index';
 
-const UsersList = (props) => (
-	<div className="UsersList">
-		<UsersBlock>
-			<User user={{
-				img: "https:\/\/frontend-test-assignment-api.abz.agency\/images\/users\/5e54ff59e5a4548.jpeg",
-				name: 'Edna Bauch',
-				email:"prosacco.jesus@anderson.com",
-				phone:"+380938999124",
-				position:"Designer"
-			}}/>
+class UsersList extends React.Component{
 
-			<User user={{
-				img: "https:\/\/frontend-test-assignment-api.abz.agency\/images\/users\/5e54ff59e5a4548.jpeg",
-				name: 'Edna Bauch',
-				email:"prosacco.jesus@anderson.com",
-				phone:"+380938999124",
-				position:"Designer"
-			}}/>
+	constructor(props){
+		super(props);
 
-			<User user={{
-				img: "https:\/\/frontend-test-assignment-api.abz.agency\/images\/users\/5e54ff59e5a4548.jpeg",
-				name: 'Edna Bauch',
-				email:"prosacco.jesus@anderson.com",
-				phone:"+380938999124",
-				position:"Designer"
-			}}/>
+		this.state = {
+			items: [],
+			isLoaded: false
+		}
+	}
 
-			<User user={{
-				img: "https:\/\/frontend-test-assignment-api.abz.agency\/images\/users\/5e54ff59e5a4548.jpeg",
-				name: 'Edna Bauch',
-				email:"prosacco.jesus@anderson.com",
-				phone:"+380938999124",
-				position:"Designer"
-			}}/>
+	componentDidMount(){
+		fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6')
+		.then(function(response) {
+		 return response.json();
+		})
+		.then(data => {
+			console.log(data);
+			 if(data.success) {
+			   this.setState({items: data.users})
+			 } else {
+			   // proccess server errors
+			 }
+		})
+	}
 
-			<User user={{
-				img: "https:\/\/frontend-test-assignment-api.abz.agency\/images\/users\/5e54ff59e5a4548.jpeg",
-				name: 'Edna Bauch',
-				email:"prosacco.jesus@anderson.com",
-				phone:"+380938999124",
-				position:"Designer"
-			}}/>
-
-			<User user={{
-				img: "https:\/\/frontend-test-assignment-api.abz.agency\/images\/users\/5e54ff59e5a4548.jpeg",
-				name: 'Edna Bauch',
-				email:"prosacco.jesus@anderson.com",
-				phone:"+380938999124",
-				position:"Designer"
-			}}/>
-		</UsersBlock>
-	</div>
-);
+	render(){
+		return (
+			<div className="UsersList">
+					<UsersBlock>
+						{
+							this.state.items
+							.map(item => <User key={item.id} user={{img: item.photo,
+																	name: item.name, 
+																	phone: item.phone, 
+																	position: item.position, 
+																	email: item.email}} />)
+						}
+					</UsersBlock>
+			</div>
+		)
+	}
+}
 
 export default UsersList;
