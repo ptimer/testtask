@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {Button} from '../../../components/index'
+import './RegisterForm.scss'
 
 const RegisterForm = (props) => (
 	<div className="RegisterForm">
@@ -41,8 +42,8 @@ const RegisterForm = (props) => (
 			      />
 			      <span>Enter phone number in open format</span>
 			  </div>
-
-		      <p>Select your position</p>
+			
+		      {/*}
 			  <input type="radio" id="pos1"
 			   name="pos1" value="pos1" />
 			  <label for="pos1">Frontend developer</label>
@@ -57,12 +58,22 @@ const RegisterForm = (props) => (
 
 			  <input type="radio" id="pos4"
 			   name="pos4" value="pos4" />
-			  <label for="pos4">QA developer</label>
+			  <label for="pos4">QA developer</label> */}
+			  <label for="radio_block">Select your position</label>
+			  <div className="radio_block">
+					<label class="control radio">
+					  <input id="radio1" name="radio" type="radio"/>
+					  <span class="control__indicator"></span>
+					  Toggle this custom radio
+				   </label>
+			  </div>
 				
 			  <label for="image_block">Photo</label>
 			  <div id="image_block">
-			  	<label for="image_uploads">Browse upload</label>
-    		  	<input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" multiple />
+			  	<label class="file">
+				  <input type="file" id="file"/>
+				  <span class="file__custom"></span>
+				</label>
 			  </div>
 			  
 

@@ -1,3 +1,11 @@
+import React, {useState, useEffect} from 'react';
+
 import RegisterForm from '../components/RegisterForm';
 
-export default RegisterForm
+export default (props) => {
+
+
+	return (
+		<RegisterForm/>
+	)
+}
