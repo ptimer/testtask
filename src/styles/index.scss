@@ -5,7 +5,13 @@
 	box-sizing: border-box;
 }
 
+/* css */
+html {
+    scroll-behavior: smooth;
+}
+
 body, html, #root, .wrapper{
+
 	height: 100%;
 	width: 100%;
 	font-family: 'Open Sans', sans-serif;

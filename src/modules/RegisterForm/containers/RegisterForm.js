@@ -62,8 +62,6 @@ export default withFormik({
 
   handleSubmit: (values, { setSubmitting, setStatus }) => {
      var dataToPost = JSON.parse(JSON.stringify(values, null, 2));
-
-	 setStatus({ success: true });
      var formData = new FormData();
      formData.append('position_id', dataToPost.position_id);
 	 formData.append('name', dataToPost.name);

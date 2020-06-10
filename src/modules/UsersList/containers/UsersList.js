@@ -78,7 +78,7 @@ const UsersListContainer = function(props){
 		})
 	}
 
-	return <UsersList showMore={showMore} showButton={showButton} items={items} />
+	return <UsersList showMore={showMore} showButton={showButton} items={items} posted={props.posted} />
 } 
 
 

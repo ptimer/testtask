@@ -2,11 +2,11 @@ import React from 'react';
 import { UsersBlock, User } from '../../../components';
 
 
-export default ({showMore, showButton, items}) => {
+export default ({showMore, showButton, items, posted}) => {
 
 	return (
 			<div className="UsersList">
-					<UsersBlock handleClick={(e) => showMore(e)} showButton={showButton}>
+					<UsersBlock handleClick={(e) => showMore(e)} showButton={showButton} posted={posted}>
 						{
 							items.map(item => <User key={item.id} user={{img: item.photo,
 																	name: item.name, 
