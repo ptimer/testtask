@@ -3,7 +3,7 @@ import './Button.scss'
 
 const Button = ({text, onClick}) => (
 	<div className="Button">
-		{onClick ? <input onClick={onClick} type="button" className="Button__input" value={text}/> : <input type="button" className="Button__input" value={text}/>}
+		{onClick ? <input onClick={onClick} type="submit" className="Button__input" value={text}/> : <input type="submit" className="Button__input" value={text}/>}
 	</div>
 );
 
