@@ -1,8 +1,8 @@
 import React from 'react';
+import { UsersBlock, User } from '../../../components';
 
-import { UsersBlock, User } from '../../../components/index';
 
-const UsersList = ({showMore, showButton, items}) => {
+export default ({showMore, showButton, items}) => {
 
 	return (
 			<div className="UsersList">
@@ -18,5 +18,3 @@ const UsersList = ({showMore, showButton, items}) => {
 			</div>
 	)
 }
-
-export default UsersList;

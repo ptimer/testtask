@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
-import {Button} from '../../../components/index'
+import {SET_POSTED} from "../../../actions";
+import {connect} from 'react-redux';
+import {Button} from '../../../components'
 import './RegisterForm.scss'
 
-const RegisterForm = ({formik, positions}) => {
+const RegisterForm = ({formik, positions, SET_POSTED}) => {
 
 	const {
       values,
@@ -12,11 +14,18 @@ const RegisterForm = ({formik, positions}) => {
       handleChange,
       handleBlur,
       handleSubmit,
-      setFieldValue
+      setFieldValue,
+      dirty,
+      status
     } = formik;
 
-	return(
+    useEffect(() => {
+		if(status && status.success == true){
+			SET_POSTED(true);
+		}
+    })
 
+	return(
 		<div className="RegisterForm">
 			<h2>Register to get a work</h2>
 			<p>Attention! After successful registration and alert, update
@@ -97,9 +106,15 @@ const RegisterForm = ({formik, positions}) => {
 				  </div>
 				  
 
-			      <Button text="Sign up now" onClick={handleSubmit}/>
+			      <Button text="Sign up now" onClick={e => {
+			      	handleSubmit(e)
+			      }
+			      }/>
 			   </form>
 		</div>
 )};
 
-export default RegisterForm;
+export default connect(
+	null,
+	{ SET_POSTED }
+)(RegisterForm);

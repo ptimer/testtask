@@ -7,9 +7,9 @@ import { Header,
 	    PreviewBlock, 
 	    AcquaintedBlock,
 		UsersBlock,
-		Footer} from '../../components/index';
+		Footer} from '../../components';
 
-import { UsersList, RegisterForm } from '../../modules/index';
+import { UsersList, RegisterForm } from '../../modules';
 
 const Home = props => {
 	return (

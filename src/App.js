@@ -1,11 +1,19 @@
 import React from 'react';
-import { Home } from './pages/index'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import rootReducer from './reducers'
+import { Home } from './pages'
+
+
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 function App() {
   return (
-    <div className="wrapper">
-      <Home />
-    </div>
+  	<Provider store={store}>
+	    <div className="wrapper">
+	      <Home />
+	    </div>
+	</Provider>
   );
 }
 

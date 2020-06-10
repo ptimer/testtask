@@ -60,18 +60,17 @@ export default withFormik({
   },
 
 
-  handleSubmit: (values, { setSubmitting }) => {
+  handleSubmit: (values, { setSubmitting, setStatus }) => {
      var dataToPost = JSON.parse(JSON.stringify(values, null, 2));
 
-	 
+	 setStatus({ success: true });
      var formData = new FormData();
-     formData.append('position_id', 2);
+     formData.append('position_id', dataToPost.position_id);
 	 formData.append('name', dataToPost.name);
 	 formData.append('email', dataToPost.email);
 	 formData.append('phone', dataToPost.phone);
 	 formData.append('photo', values.file);
-     setSubmitting(false);
-
+	
 	 	fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token')
 		.then(function(response) {
 		 return response.json();
@@ -90,9 +89,9 @@ export default withFormik({
 			})
 			.then(function(data) {
 			  if(data.success) {
-			    console.log(data);
+			  	setStatus({ success: true });
 			  } else {
-			    console.log(data);
+			  	setStatus({ success: false });
 			  }
 			})
 			.catch(function(error) {
@@ -102,6 +101,8 @@ export default withFormik({
 		.catch(function(error) {
 				 // proccess network errors
 		});
+
+	setSubmitting(false);
   },
 
   displayName: 'RegisterFormWithPositions',
