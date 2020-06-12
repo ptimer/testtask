@@ -1,29 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
-import {SET_POSTED} from "../../../actions";
-import {connect} from 'react-redux';
-import {Button} from '../../../components'
+import {Button} from '../../GenericComponents/index'
 import './RegisterForm.scss'
 
-const RegisterForm = ({formik, positions, SET_POSTED}) => {
-
-	const {
-      values,
-      touched,
-      errors,
-      handleChange,
-      handleBlur,
-      handleSubmit,
-      setFieldValue,
-      dirty,
-      status
-    } = formik;
-
-    useEffect(() => {
-		if(status && status.success == true){
-			SET_POSTED(true);
-		}
-    })
+export default (props) => {
 
 	return(
 		<div className="RegisterForm">
@@ -31,7 +11,7 @@ const RegisterForm = ({formik, positions, SET_POSTED}) => {
 			<p>Attention! After successful registration and alert, update
 			the list of users in the block from the top</p>
 
-	          <form onSubmit={handleSubmit}>
+	          <form>
 	  			  <div className="RegisterForm__inputBlock">
 		  			  <label htmlFor="name">Name</label>
 				      <input
@@ -39,10 +19,7 @@ const RegisterForm = ({formik, positions, SET_POSTED}) => {
 				        name="name"
 				        type="text"
 				        placeholder="Your name"
-				        onChange={handleChange}
-		                onBlur={handleBlur}
 				      />
-				      {errors.name ? errors.name : ''}
 	  			  </div>
 			      
 
@@ -53,10 +30,7 @@ const RegisterForm = ({formik, positions, SET_POSTED}) => {
 				        type="email"
 				        placeholder="Your email"
 				        name="email"
-		                onChange={handleChange}
-		                onBlur={handleBlur}
 				      />
-				      {errors.email ? errors.email : ''}
 				  </div>
 
 				  
@@ -67,17 +41,14 @@ const RegisterForm = ({formik, positions, SET_POSTED}) => {
 				        name="phone"
 				        type="text"
 				        placeholder="+380 XX XXX XX XX"
-				        onChange={handleChange}
-		                onBlur={handleBlur}
 				      />
 				      <span>Enter phone number in open format</span>
-				      {errors.phone ? errors.phone : ''}
 				  </div>
 				
 				  <label for="radio_block">Select your position</label>
 
 				  <div className="radio_block">
-						{positions.map(p => {
+						{/*positions.map(p => {
 						  	return (
 								<label class="control radio" key={p.id}>
 								  <input id={`radio-${p.id}`} name="position_id" value={p.id}
@@ -88,7 +59,7 @@ const RegisterForm = ({formik, positions, SET_POSTED}) => {
 								  {p.name}
 							   </label>
 						  	);
-						})}
+						})*/}
 				  </div>
 					
 				  <label for="image_block">Photo</label>
@@ -96,25 +67,29 @@ const RegisterForm = ({formik, positions, SET_POSTED}) => {
 				  	<label class="file">
 					  <input type="file" 
 					  name="photo"
-					   id="file"
-					   onChange={(event) => {
-						  setFieldValue("file", event.currentTarget.files[0]);
-					   }}
-		               onBlur={handleBlur}/>
+					   id="file" />
 					  <span class="file__custom"></span>
 					</label>
 				  </div>
 				  
 
-			      <Button text="Sign up now" onClick={e => {
-			      	handleSubmit(e)
-			      }
-			      }/>
+			      <Button text="Sign up now"/>
 			   </form>
+
+
+			   <div className='modalWindow'>
+					<div className="modalWindow__header">
+						<h3>Congratulations</h3>
+						<div className="close">x</div>
+					</div>
+					<div className="modalWindow__content">
+						<span>You have successfully passed the registration</span>
+					</div>
+					
+					<div className="modalWindow__footer">
+						<Button text="Great" />
+					</div>
+					
+			   </div>
 		</div>
 )};
-
-export default connect(
-	null,
-	{ SET_POSTED }
-)(RegisterForm);

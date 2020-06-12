@@ -1,11 +1,11 @@
 import React from 'react';
-import './PreviewBlock.scss'
+import './BannerBlock.scss'
 
-import { Button } from '../index'
+import { Button } from '../GenericComponents/'
 
-const PreviewBlock = props => (
-	<div className="PreviewBlock">
-		<div className="PreviewBlock__content">
+const BannerBlock = props => (
+	<div className="BannerBlock">
+		<div className="BannerBlock__content">
 			<h1>Test assignment for frontend developer position</h1>
 			<p>We kindly remind you that your test assignment should be submited 
 			as a link to github/bitbucket repository. Please be patient, we consider
@@ -18,4 +18,4 @@ const PreviewBlock = props => (
 	</div>
 );
 
-export default PreviewBlock;
+export default BannerBlock;
