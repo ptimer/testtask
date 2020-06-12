@@ -1,16 +1,18 @@
 import React from 'react';
 
-import UsersList from './UsersList/index';
-import User from './User/index';
+import UsersList from './List';
+import UsersUser from './User';
+
+import './Users.scss'
 
 
 export default ({showMore, showButton, items, posted}) => {
 
 	return (
-			<div className="UsersBlock">
+			<div className="Users">
 					<UsersList>
 						{/*
-							items.map(item => <User key={item.id} user={{img: item.photo,
+							items.map(item => <UsersUser key={item.id} user={{img: item.photo,
 																	name: item.name, 
 																	phone: item.phone, 
 																	position: item.position, 

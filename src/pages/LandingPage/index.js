@@ -3,10 +3,10 @@ import React from 'react';
 import './LandingPage.scss';
 
 import { Header, 
-	    BannerBlock, 
-	    AboutMeBlock,
-		UsersBlock,
-		RegisterForm,
+	    Banner, 
+	    AboutMe,
+		Users,
+		Register,
 		Footer} from '../../components';
 
 const LandingPage = props => {
@@ -14,16 +14,20 @@ const LandingPage = props => {
 		<React.Fragment>
 			<Header />
 
-			<div className="container">
-				<BannerBlock />
-				<AboutMeBlock />	
-				<UsersBlock />
-				<RegisterForm />
-			</div>
-
+			<Container />
+			
 			<Footer />
 		</React.Fragment>
 	);
 }
+
+const Container = _ => (
+	<div className="container">
+		<Banner />
+		<AboutMe />	
+		<Users />
+		<Register />
+	</div>
+)
 
 export default LandingPage;

@@ -1,11 +1,11 @@
 import React from 'react';
-import './BannerBlock.scss'
+import './Banner.scss'
 
-import { Button } from '../GenericComponents/'
+import { Button } from '../UI'
 
-const BannerBlock = props => (
-	<div className="BannerBlock">
-		<div className="BannerBlock__content">
+const Banner = props => (
+	<div className="Banner">
+		<div className="Banner__content">
 			<h1>Test assignment for frontend developer position</h1>
 			<p>We kindly remind you that your test assignment should be submited 
 			as a link to github/bitbucket repository. Please be patient, we consider
@@ -18,4 +18,4 @@ const BannerBlock = props => (
 	</div>
 );
 
-export default BannerBlock;
+export default Banner;

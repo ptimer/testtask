@@ -1,18 +1,18 @@
 import React from 'react';
 
-import {Button} from '../../GenericComponents/index'
-import './RegisterForm.scss'
+import {Button} from '../../UI'
+import './Register.scss'
 
 export default (props) => {
 
 	return(
-		<div className="RegisterForm">
+		<div className="Register">
 			<h2>Register to get a work</h2>
 			<p>Attention! After successful registration and alert, update
 			the list of users in the block from the top</p>
 
 	          <form>
-	  			  <div className="RegisterForm__inputBlock">
+	  			  <div className="Register__inputBlock">
 		  			  <label htmlFor="name">Name</label>
 				      <input
 				        id="name"
@@ -23,7 +23,7 @@ export default (props) => {
 	  			  </div>
 			      
 
-				  <div className="RegisterForm__inputBlock">
+				  <div className="Register__inputBlock">
 				      <label htmlFor="email">Email</label>
 				      <input
 				        id="email"
@@ -34,7 +34,7 @@ export default (props) => {
 				  </div>
 
 				  
-				  <div className="RegisterForm__inputBlock">
+				  <div className="Register__inputBlock">
 				      <label htmlFor="number">Phone number</label>
 				      <input
 				        id="number"
