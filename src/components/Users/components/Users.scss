@@ -1,0 +1,40 @@
+@import '../../../styles/_variables.scss';
+
+.Users{
+	text-align: center;
+	padding-top: 160px;
+	padding-bottom: 160px;
+	background: $backgroundColor2;
+
+	&__button{
+		margin-top: 40px;
+	}
+
+	.Users__title{
+		font-size: 50px;
+		line-height: 54px;
+	}
+
+	.Users__description{
+		margin-top: 30px;
+		margin-bottom: 70px;
+	}
+
+	@media screen and (max-width: 2560px){
+		
+	}
+
+	@media screen and (max-width: 1024px){
+		
+	}
+
+	@media screen and (max-width: 768px){
+		
+		
+	}
+
+	@media screen and (max-width: 360px){
+			
+	}
+	
+}

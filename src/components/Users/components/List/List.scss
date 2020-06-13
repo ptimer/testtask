@@ -1,24 +1,8 @@
 @import '../../../../styles/_variables.scss';
 
 .list{
-	text-align: center;
-	padding-top: 160px;
-	padding-bottom: 160px;
-	background: $backgroundColor2;
+	
 
-	&__button{
-		margin-top: 40px;
-	}
-
-	h2{
-		font-size: 50px;
-		line-height: 54px;
-	}
-
-	p{
-		margin-top: 30px;
-		margin-bottom: 70px;
-	}
 
 	@media screen and (max-width: 2560px){
 		&__users{
