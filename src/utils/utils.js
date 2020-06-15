@@ -1,14 +1,10 @@
 export const utils = {
-	getUsers: params => {
-		return fetch(`https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${params.page}&count=${params.count}`)
+	getUsers: params => fetch(`https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${params.page}&count=${params.count}`)
 		.then(r => r.json())
-		.then(d => {
-			console.log(d)
-			if(d.success){
-				return d;
-			}else{
-				throw "Не получилось получить список пользователей";
-			}
-		})
-	},
+		.then(d => d.success ? d : error()),
+	sortUsersByRegistration: obj => obj.sort((a, b) => b.registration_timestamp - a.registration_timestamp)
+}
+
+const error = _ => {
+	throw 'Не получилось получить список пользователей'
 }
