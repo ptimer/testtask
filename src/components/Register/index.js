@@ -12,7 +12,8 @@ export default (props) => {
 	    handleBlur,
 	    handleSubmit,
 	    isValid,
-	    isSubmitting
+	    isSubmitting,
+	    setFieldValue
 	} = props
 
 	return(
@@ -29,7 +30,10 @@ export default (props) => {
 				        name="name"
 				        type="text"
 				        placeholder="Your name"
+				        onChange={handleChange}
+		                onBlur={handleBlur}
 				      />
+				      {errors.name ? errors.name : ''}
 	  			  </div>
 			      
 
@@ -40,7 +44,10 @@ export default (props) => {
 				        type="email"
 				        placeholder="Your email"
 				        name="email"
+				        onChange={handleChange}
+		                onBlur={handleBlur}
 				      />
+				      {errors.email ? errors.email : ''}
 				  </div>
 
 				  
@@ -51,7 +58,10 @@ export default (props) => {
 				        name="phone"
 				        type="text"
 				        placeholder="+380 XX XXX XX XX"
+				        onChange={handleChange}
+		                onBlur={handleBlur}
 				      />
+				      {errors.phone ? errors.phone : ''}
 				      <span>Enter phone number in open format</span>
 				  </div>
 				
@@ -70,6 +80,20 @@ export default (props) => {
 							   </label>
 						  	);
 						})*/}
+						<label className="control radio">
+								  <input id='radio-1' name="position_id" value='1'
+									onChange={handleChange}
+		                			onBlur={handleBlur}
+								   type="radio"/>
+								  <span className="control__indicator">1</span>
+						</label>
+						<label className="control radio">
+								  <input id='radio-2' name="position_id" value='2'
+									onChange={handleChange}
+		                			onBlur={handleBlur}
+								   type="radio"/>
+								  <span className="control__indicator">2</span>
+						</label>
 				  </div>
 					
 				  <label htmlFor="image_block">Photo</label>
@@ -77,12 +101,14 @@ export default (props) => {
 				  	<label className="file">
 					  <input type="file" 
 					  name="photo"
-					   id="file" />
+					   id="file" 
+					   onChange={(event) => {
+						  setFieldValue("file", event.currentTarget.files[0]);
+					   }}
+		               onBlur={handleBlur}/>/>
 					  <span className="file__custom"></span>
 					</label>
 				  </div>
-				  
-
 			      <Button>Sign up now</Button>
 			   </form>
 

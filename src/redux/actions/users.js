@@ -6,18 +6,18 @@ const Actions = {
 		payload: data
 	}),
 
-	fetchUserRegister: postData => dispatch => {
+	fetchUserRegister: formData => dispatch => {
 		return userApi
 		.getToken()
-		.then(data => dispatch(Actions.setSignUp(data)))
+		.then(token => dispatch(Actions.setSignUp({formData: formData, token: token})))
 	},
 
 	getUsers: data => () => {
 	 	return userApi.getUsers(data)
 	},
 
-	getToken: data => () => {
-	 	return userApi.getToken(data)
+	getToken: _ => () => {
+	 	return userApi.getToken()
 	},
 
 	setSignUp: data => () => {

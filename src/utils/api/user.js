@@ -1,11 +1,11 @@
 const usersLink = 'https://frontend-test-assignment-api.abz.agency/api/v1/users'
 
 export default {
-  signUp: postData => fetch(usersLink, {
+  signUp: data => fetch(usersLink, {
   	  method: 'POST',
-  	  body: postData.formData,
+  	  body: data.formData,
   	  headers: {
-  	    'Token': postData.token, // get token with GET api/v1/token method
+  	    'Token': data.token, // get token with GET api/v1/token method
   	  },
   	  
   	})
@@ -18,7 +18,7 @@ export default {
 
   getUsers: params => fetch(`${usersLink}?page=${params.page}&count=${params.count}`)
 		.then(response => response.json())
-		.then(data => data.success ? data : getUsersError()),
+		.then(data => data.success ? data.token : getUsersError()),
 };
 
 function getUsersError(){
