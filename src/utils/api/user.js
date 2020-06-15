@@ -1,7 +1,7 @@
 const usersLink = 'https://frontend-test-assignment-api.abz.agency/api/v1/users'
 
 export default {
-  signUp: postData => {fetch(usersLink, {
+  signUp: postData => fetch(usersLink, {
   	  method: 'POST',
   	  body: postData.formData,
   	  headers: {
@@ -10,8 +10,12 @@ export default {
   	  
   	})
     .then(response => response.json())
-    .then(data => data.success ? console.log('success') : postUsersError())
-  },
+    .then(data => data.success ? console.log('success') : postUsersError()),
+
+  getToken: _ => fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token')
+    .then(response => response.json())
+    .then(data => data.success ? data : getTokenError()),
+
   getUsers: params => fetch(`${usersLink}?page=${params.page}&count=${params.count}`)
 		.then(response => response.json())
 		.then(data => data.success ? data : getUsersError()),
@@ -23,4 +27,8 @@ function getUsersError(){
 
 function postUsersError(){
 	throw 'Неудачная попытка добавить пользователя'
+}
+
+function getTokenError(){
+  throw 'Не удалось получить токен'
 }

@@ -6,13 +6,24 @@ const Actions = {
 		payload: data
 	}),
 
-	fetchUserRegister: postData => () => {
-		return userApi.signUp(postData);
+	fetchUserRegister: postData => dispatch => {
+		return userApi
+		.getToken()
+		.then(data => dispatch(Actions.setSignUp(data)))
 	},
 
 	getUsers: data => () => {
-	 	return userApi.getUsers(data);
+	 	return userApi.getUsers(data)
 	},
+
+	getToken: data => () => {
+	 	return userApi.getToken(data)
+	},
+
+	setSignUp: data => () => {
+		return userApi.signUp(data);
+	}
+
 }
 
 export default Actions;
