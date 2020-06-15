@@ -1,7 +1,7 @@
 import React from 'react';
 import './Navigation.scss'
 
-const Navigation = props => (
+export default props => (
 	<nav className="nav">
 		<ul>
 			<li>
@@ -22,5 +22,3 @@ const Navigation = props => (
 		</ul>
 	</nav>
 );
-
-export default Navigation;

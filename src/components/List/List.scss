@@ -1,9 +1,6 @@
-@import '../../../../styles/_variables.scss';
+@import '../../styles/_variables.scss';
 
 .list{
-	
-
-
 	@media screen and (max-width: 2560px){
 		&__users{
 			display: grid;

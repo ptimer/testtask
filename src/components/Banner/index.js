@@ -1,9 +1,9 @@
 import React from 'react';
 import './Banner.scss'
 
-import { Button } from '../UI'
+import { Button } from '../'
 
-const Banner = props => (
+export default props => (
 	<div className="Banner">
 		<div className="Banner__content">
 			<h1>Test assignment for frontend developer position</h1>
@@ -17,5 +17,3 @@ const Banner = props => (
 		
 	</div>
 );
-
-export default Banner;

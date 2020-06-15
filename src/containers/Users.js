@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {connect} from 'react-redux'
-import {usersActions} from '../../../redux/actions'
-import UsersList from '../components/Users'
-import Utils from '../../../utils'
+import {usersActions} from '../redux/actions'
+import { Users as UsersList } from '../components'
+import Utils from '../utils'
 
 const Users = ({addUsers, users}) => {
 	const [page, setPage] = useState(1)

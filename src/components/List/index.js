@@ -1,8 +1,7 @@
 import React from 'react';
 import './List.scss';
 
-export default function List ({children}){
-
+export default ({children}) => {
 	return (
 		<div className="list">
 			<div className="list__users">

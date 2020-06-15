@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import './User.scss';
 
-const User = ({user}) => (
+export default ({user}) => (
 	<div className="User">
 		{user && <Fragment><img src={user.photo} alt={user.name}/>
 				 <h3 className="User__name">{user.name}</h3>
@@ -10,5 +10,3 @@ const User = ({user}) => (
 				 <span className="User__phone">{user.phone}</span></Fragment>}
 	</div>
 );
-
-export default User;
