@@ -6,23 +6,17 @@ import {Header, Banner, AboutMe,Footer} from '../../components';
 import {Users, Register} from '../../containers';
 
 
-const LandingPage = props => {
+export default _ => {
 	return (
 		<React.Fragment>
 			<Header />
-			<Container />
+			<div className="container">
+				<Banner />
+				<AboutMe />	
+				<Users />
+				<Register />
+			</div>
 			<Footer />
 		</React.Fragment>
 	);
 }
-
-const Container = _ => (
-	<div className="container">
-		<Banner />
-		<AboutMe />	
-		<Users />
-		<Register />
-	</div>
-)
-
-export default LandingPage;

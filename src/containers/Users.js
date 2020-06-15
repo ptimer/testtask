@@ -15,9 +15,7 @@ const Users = ({addUsers, users}) => {
 		})
 	}, [page])
 
-	return (
-		<UsersList users={ users } showMore={_=> setPage(prev => prev + 1)} showButton = {page < totalPages} />
-	)
+	return <UsersList users={ users } showMore={_=> setPage(prev => prev + 1)} showButton = {page < totalPages} />
 }
 
 export default connect(

@@ -6,8 +6,8 @@ import { Button, List, User } from '../'
 const Users = ({showButton, users, showMore}) => {
 	return (
 		<div className="Users">
-			<h2 class="Users__title">Let's get acquainted</h2>
-	 		<p class="Users__description">Attention! Sorting users by registration date</p>
+			<h2 className="Users__title">Let's get acquainted</h2>
+	 		<p className="Users__description">Attention! Sorting users by registration date</p>
 			<List> {users && users.map(user => <User key={user.id} user={user} />)} </List>	
 			<div className="Users__button"> {showButton ? <Button onClick={showMore}>Show more</Button> : ''} </div>
 		</div>

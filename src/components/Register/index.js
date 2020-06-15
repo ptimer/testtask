@@ -45,7 +45,7 @@ export default (props) => {
 				      <span>Enter phone number in open format</span>
 				  </div>
 				
-				  <label for="radio_block">Select your position</label>
+				  <label htmlFor="radio_block">Select your position</label>
 
 				  <div className="radio_block">
 						{/*positions.map(p => {
@@ -62,13 +62,13 @@ export default (props) => {
 						})*/}
 				  </div>
 					
-				  <label for="image_block">Photo</label>
+				  <label htmlFor="image_block">Photo</label>
 				  <div id="image_block">
-				  	<label class="file">
+				  	<label className="file">
 					  <input type="file" 
 					  name="photo"
 					   id="file" />
-					  <span class="file__custom"></span>
+					  <span className="file__custom"></span>
 					</label>
 				  </div>
 				  

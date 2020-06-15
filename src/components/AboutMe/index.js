@@ -18,7 +18,7 @@ const AboutMe = props => (
 					(gulp/webpack) you will get bonus points as well. Slice service directory
 					page PSD mockup into HTML5/CSS3.
 				</p>
-				<a href="">Sign up now</a>
+				<a href="http://localhost:3000/?name=&email=&phone=&photo=">Sign up now</a>
 			</div>
 			
 		</div>
