@@ -6,17 +6,11 @@ const Actions = {
 
 	cleanUsers: _ => ({type: 'USERS:CLEAN'}),
 
-	FormIsSubmit: _ => {
-		store.dispatch(Actions.cleanUsers())
-		store.dispatch(Actions.getUsers({page: 1, count: 6}))
-		.then(data => store.dispatch(Actions.addUsers(data.users)));
-	},
-
 	fetchUserRegister: formData => dispatch => {
 		return userApi
 		.getToken()
 		.then(token => dispatch(Actions.setSignUp({formData: formData, token: token})))
-		.then(success => success == true ? dispatch(Actions.FormIsSubmit) : console.log('Error in fetchUserRegister'))
+		.then(_ => dispatch(Actions.cleanUsers()))
 	},
 
 	getUsers: data => () => {

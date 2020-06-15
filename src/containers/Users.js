@@ -8,17 +8,25 @@ import {sortUsersByRegistration} from '../utils'
 const Users = ({addUsers, users}) => {
 	const [page, setPage] = useState(1)
 	const [totalPages, setTotalPages] = useState(0)
+	const [totalUsers, setTotalUsers] = useState(0)
 
 	useEffect(_ => {
 		store
 		.dispatch(usersActions.getUsers(({count: 6, page: page})))
-		.then(d => {
-			addUsers([...sortUsersByRegistration(d.users)])
-			setTotalPages(d.total_pages)
+		.then(data => {
+			addUsers([...sortUsersByRegistration(data.users)])
+			setTotalPages(data.total_pages)
+			setTotalUsers(data.total_users)
 		})
 	}, [page])
 
-	return <UsersList users={ users } showMore={_=> setPage(prev => prev + 1)} showButton = {page < totalPages} />
+	useEffect(_ => {
+		if(users <= 6){
+			setPage(1)
+		}
+	})
+
+	return <UsersList users={ users } showMore={_=> {setPage(prev => prev + 1)}} showButton = {users.length < totalUsers} />
 }
 
 export default connect(
