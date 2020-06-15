@@ -1,37 +1,33 @@
-import React from 'react';
-import propTypes from 'prop-types';
-
-import { Button } from '../../UI'
-import UsersList from './List';
-import UsersUser from './User';
-
+import React, {useState, useEffect, Fragment} from 'react'
+import propTypes from 'prop-types'
 import './Users.scss'
+import { Button } from '../../UI'
+import List from './List'
+import User from './User'
 
 
-export default function Users(props){
-
+export default function Users({showButton, users, showMore}){
 	return (
-			<div className="Users">
-					<h2 class="Users__title">Let's get acquainted</h2>
-					<p class="Users__description">Attention! Sorting users by registration date</p>
-
-					<UsersList>
-						{
-							props.users.map(item => <UsersUser key={item.id} user={{img: item.photo,
-																							name: item.name, 
-																							phone: item.phone, 
-																							position: item.position, 
-																							email: item.email}} />)
-						}
-					</UsersList>
-					
-					<div className="Users__button">
-						<Button text="Show more" />
-					</div>
+		<div className="Users">
+			<Text />
+			<List> {users && users.map(user => <User key={user.id} user={user} />)} 
+			</List>	
+			<div className="Users__button">
+				{showButton ? <Button onClick={showMore}>Show more</Button> : ''}
 			</div>
+		</div>
 	)
 }
 
 Users.propTypes = {
-	users: propTypes.array
+	users: propTypes.array,
+	showMore: propTypes.func,
+	showButton: propTypes.bool,
 }
+
+const Text = _ => (
+	<Fragment>
+		<h2 class="Users__title">Let's get acquainted</h2>
+	 	<p class="Users__description">Attention! Sorting users by registration date</p>
+	</Fragment>
+)

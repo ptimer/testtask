@@ -73,7 +73,7 @@ export default (props) => {
 				  </div>
 				  
 
-			      <Button text="Sign up now"/>
+			      <Button>Sign up now</Button>
 			   </form>
 
 
