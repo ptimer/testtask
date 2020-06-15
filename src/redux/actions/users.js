@@ -6,12 +6,12 @@ const Actions = {
 		payload: data
 	}),
 
-	fetchUserRegister: postData => {
+	fetchUserRegister: postData => () => {
 		return userApi.signUp(postData);
 	},
 
-	getUsers: data => {
-		return userApi.getUsers(data);
+	getUsers: data => () => {
+	 	return userApi.getUsers(data);
 	},
 }
 

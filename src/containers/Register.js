@@ -45,7 +45,7 @@ export default withFormik({
       .then(() => {
         setSubmitting(false)
       })
-      .catch(err => err)
+      .catch(err => console.log(err))
   },
 
   displayName: 'Register',
