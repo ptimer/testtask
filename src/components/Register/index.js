@@ -4,6 +4,16 @@ import {Button} from '../'
 import './Register.scss'
 
 export default (props) => {
+	const {
+	    values,
+	    touched,
+	    errors,
+	    handleChange,
+	    handleBlur,
+	    handleSubmit,
+	    isValid,
+	    isSubmitting
+	} = props
 
 	return(
 		<div className="Register">
@@ -11,7 +21,7 @@ export default (props) => {
 			<p>Attention! After successful registration and alert, update
 			the list of users in the block from the top</p>
 
-	          <form>
+	          <form onSubmit={handleSubmit}>
 	  			  <div className="Register__inputBlock">
 		  			  <label htmlFor="name">Name</label>
 				      <input

@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {connect} from 'react-redux'
-import {usersActions} from '../redux/actions'
 import { Users as UsersList } from '../components'
+import { usersActions } from '../redux/actions'
+import store from '../redux/store'
 import Utils from '../utils'
 
 const Users = ({addUsers, users}) => {
@@ -9,7 +10,9 @@ const Users = ({addUsers, users}) => {
 	const [totalPages, setTotalPages] = useState(0)
 
 	useEffect(_ => {
-		Utils.getUsers({count: 6, page: page}).then(d => {
+		store
+		.dispatch(usersActions.getUsers(({count: 6, page: page})))
+		.then(d => {
 			addUsers([...Utils.sortUsersByRegistration(d.users)])
 			setTotalPages(d.total_pages)
 		})
