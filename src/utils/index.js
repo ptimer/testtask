@@ -1,3 +1,2 @@
-import {utils} from './utils';
-
-export default utils
+export {default as validateForm} from './validateForm'
+export {default as sortUsersByRegistration} from './sortUsersByRegistration'

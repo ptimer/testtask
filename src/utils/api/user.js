@@ -1,7 +1,7 @@
-const usersLink = 'https://frontend-test-assignment-api.abz.agency/api/v1/users'
+const APILINK = 'https://frontend-test-assignment-api.abz.agency/api/v1'
 
 export default {
-  signUp: data => fetch(usersLink, {
+  signUp: data => fetch(`${APILINK}/users`, {
   	  method: 'POST',
   	  body: data.formData,
   	  headers: {
@@ -12,13 +12,13 @@ export default {
     .then(response => response.json())
     .then(data => data.success ? console.log('success') : postUsersError()),
 
-  getToken: _ => fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token')
+  getToken: _ => fetch(`${APILINK}/token`)
     .then(response => response.json())
-    .then(data => data.success ? data : getTokenError()),
+    .then(data => data.success ? data.token : getTokenError()),
 
-  getUsers: params => fetch(`${usersLink}?page=${params.page}&count=${params.count}`)
+  getUsers: params => fetch(`${APILINK}/users?page=${params.page}&count=${params.count}`)
 		.then(response => response.json())
-		.then(data => data.success ? data.token : getUsersError()),
+		.then(data => data.success ? data : getUsersError()),
 };
 
 function getUsersError(){
