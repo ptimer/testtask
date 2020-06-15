@@ -71,12 +71,12 @@ export default (props) => {
 				  <div className="radio_block">
 						{positions.map(position => {
 						  	return (
-								<label class="control radio" key={position.id}>
+								<label className="control radio" key={position.id}>
 								  <input id={`radio-${position.id}`} name="position_id" value={position.id}
 									onChange={handleChange}
 		                			onBlur={handleBlur}
 								   type="radio"/>
-								  <span class="control__indicator"></span>
+								  <span className="control__indicator"></span>
 								  {position.name}
 							   </label>
 						  	);

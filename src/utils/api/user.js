@@ -10,7 +10,7 @@ export default {
   	  
   	})
     .then(response => response.json())
-    .then(data => data.success ? console.log('success') : postUsersError()),
+    .then(data => data.success ? true : postUsersError()),
 
   getToken: _ => fetch(`${APILINK}/token`)
     .then(response => response.json())
