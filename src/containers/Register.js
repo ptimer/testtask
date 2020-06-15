@@ -1,31 +1,23 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { withFormik } from 'formik'
-import { Register } from '../components'
+import { Register as RegisterComponent } from '../components'
 import {validateForm} from '../utils'
-import { usersActions } from '../redux/actions'
+import { usersActions, positionsActions } from '../redux/actions'
 import store from '../redux/store'
 
-/*
-const Register = _ => {
-	var formData = new FormData();
-	// file from input type='file'
-	var fileField = document.querySelector('input[type="file"]');
-	formData.append('position_id', 2);
-	formData.append('name', 'Jhon');
-	formData.append('email', 'Jhon@gmail.com');
-	formData.append('phone', '+380955388485');
-	formData.append('photo', 'fileField.files[0]');
-
+const Register = props => {
+	
+  const [positions, setPositions] = useState([])
 
 	useEffect(_ => {
-		//Utils.postUsers(formData);
-	})
-
-
+    store
+      .dispatch(positionsActions.getPositions())
+      .then(data => setPositions(data.positions))
+	}, [])
 	
-	return <RegisterComponent/>
+	return <RegisterComponent {...props} positions={ positions }/>
 }
-*/
+
 export default withFormik({
   mapPropsToValues: () => ({ name: '', email: '', phone: '', position_id: '', photo: ''}),
 

@@ -5,7 +5,7 @@ export default ({ values, errors }) => {
       		errors.name = "Нужно ввести имя"
 	    }
 
-	    if(value.name > 2 && value.name < 60){
+	    if(!(value.length > 2) || !(value.length < 60)){
 	    	errors.name = "Имя должно быть не меньше 2-х символов и не больше 60"
 	    }
     },

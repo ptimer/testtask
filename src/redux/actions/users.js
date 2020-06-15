@@ -21,7 +21,7 @@ const Actions = {
 	},
 
 	setSignUp: data => () => {
-		return userApi.signUp(data);
+		return userApi.signUp(data)
 	}
 
 }

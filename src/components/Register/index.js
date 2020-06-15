@@ -13,7 +13,8 @@ export default (props) => {
 	    handleSubmit,
 	    isValid,
 	    isSubmitting,
-	    setFieldValue
+	    setFieldValue,
+	    positions
 	} = props
 
 	return(
@@ -68,32 +69,18 @@ export default (props) => {
 				  <label htmlFor="radio_block">Select your position</label>
 
 				  <div className="radio_block">
-						{/*positions.map(p => {
+						{positions.map(position => {
 						  	return (
-								<label class="control radio" key={p.id}>
-								  <input id={`radio-${p.id}`} name="position_id" value={p.id}
+								<label class="control radio" key={position.id}>
+								  <input id={`radio-${position.id}`} name="position_id" value={position.id}
 									onChange={handleChange}
 		                			onBlur={handleBlur}
 								   type="radio"/>
 								  <span class="control__indicator"></span>
-								  {p.name}
+								  {position.name}
 							   </label>
 						  	);
-						})*/}
-						<label className="control radio">
-								  <input id='radio-1' name="position_id" value='1'
-									onChange={handleChange}
-		                			onBlur={handleBlur}
-								   type="radio"/>
-								  <span className="control__indicator">1</span>
-						</label>
-						<label className="control radio">
-								  <input id='radio-2' name="position_id" value='2'
-									onChange={handleChange}
-		                			onBlur={handleBlur}
-								   type="radio"/>
-								  <span className="control__indicator">2</span>
-						</label>
+						})}
 				  </div>
 					
 				  <label htmlFor="image_block">Photo</label>
