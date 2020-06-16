@@ -3,8 +3,19 @@ import {connect} from 'react-redux'
 import {Modal as ModalComponent} from '../components'
 
 const Modal = ({registered}) => {
+	const [visible, setVisible] = useState(false)
 
-	return <ModalComponent visible={registered}/>
+	useEffect(_ => {
+		if(registered){
+			setVisible(true)
+		}
+	})
+
+	const close = _ => {
+		setVisible(false)
+	}
+
+	return <ModalComponent close={close} visible={visible}/>
 }
 
 export default connect(

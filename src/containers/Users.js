@@ -38,6 +38,5 @@ const Users = ({users, registered}) => {
 }
 
 export default connect(
-	({ users, registered }) => ({users, registered}),
-	null
+	({ users, registered }) => ({users, registered})
 )(Users)

@@ -20,7 +20,6 @@ const Register = props => {
 
 export default withFormik({
   mapPropsToValues: () => ({ name: '', email: '', phone: '', position_id: '', photo: ''}),
-  // Custom sync validation
   validate: values => {
     let errors = {}
 

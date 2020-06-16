@@ -3,10 +3,10 @@ import propTypes from 'prop-types'
 import './Modal.scss'
 import {Button} from '../'
 
-const Modal = ({visible, showModal}) => (
+const Modal = ({visible, close}) => (
 	<Fragment>
 		{visible && <div className="modal">
-				<Button onClick={showModal}>Great</Button>
+				<Button onClick={close}>Great</Button>
 			</div>
 		}
 	</Fragment>
@@ -14,7 +14,7 @@ const Modal = ({visible, showModal}) => (
 
 Modal.propTypes = {
 	visible: propTypes.bool,
-	showModal: propTypes.func,
+	close: propTypes.func,
 }
 
 export default Modal
