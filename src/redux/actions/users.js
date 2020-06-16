@@ -1,4 +1,6 @@
 import { userApi } from '../../utils/api'
+import {sortUsersByRegistration} from '../../utils'
+import {registeredActions} from './'
 import store from '../store'
 
 const Actions = {
@@ -11,6 +13,9 @@ const Actions = {
 		.getToken()
 		.then(token => dispatch(Actions.setSignUp({formData: formData, token: token})))
 		.then(_ => dispatch(Actions.cleanUsers()))
+		.then(_=>dispatch(registeredActions.setRegistered(true)))
+		.then(_ => dispatch(Actions.getUsers('https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6')))
+		.then(data => dispatch(Actions.addUsers([...sortUsersByRegistration(data.users)])))
 	},
 
 	getUsers: data => () => {

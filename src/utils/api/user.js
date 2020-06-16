@@ -6,8 +6,7 @@ export default {
   	  body: data.formData,
   	  headers: {
   	    'Token': data.token, // get token with GET api/v1/token method
-  	  },
-  	  
+  	  },	  
   	})
     .then(response => response.json())
     .then(data => data.success ? true : postUsersError()),
@@ -16,7 +15,7 @@ export default {
     .then(response => response.json())
     .then(data => data.success ? data.token : getTokenError()),
 
-  getUsers: params => fetch(`${APILINK}/users?page=${params.page}&count=${params.count}`)
+  getUsers:link => fetch(link)
 		.then(response => response.json())
 		.then(data => data.success ? data : getUsersError()),
 };

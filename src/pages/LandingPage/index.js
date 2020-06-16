@@ -2,8 +2,8 @@ import React from 'react';
 
 import './LandingPage.scss';
 
-import {Header, Banner, AboutMe,Footer} from '../../components';
-import {Users, Register} from '../../containers';
+import {Header, Banner, AboutMe, Footer} from '../../components';
+import {Users, Register, Modal} from '../../containers';
 
 
 export default _ => {
@@ -15,6 +15,7 @@ export default _ => {
 				<AboutMe />	
 				<Users />
 				<Register />
+				<Modal />
 			</div>
 			<Footer />
 		</React.Fragment>
