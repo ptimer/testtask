@@ -1,7 +1,64 @@
+@import '../../styles/_variables.scss';
+
+.Overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000a6;
+}
+
 .modal{
-	width: 200px;
-	height: 150px;
-	background: white;
-	border: 1px solid black;
-	position: absolute;
+	$self: &;
+	width: 395px;
+    height: 190px;
+    background: $backgroundColor;
+    border-radius: 3px;
+    position: fixed;
+    top: calc(50% - 95px);
+    left: calc(50% - 197.5px);
+    text-align: left;
+
+
+	&__top{
+        padding-right: 15px;
+        padding-left: 15px;
+        display: flex;
+        justify-content: space-between;
+        line-height: 60px;
+        border-bottom: 1px solid #ddd;
+
+        #{$self}__close{
+          img{
+          	width: 10px;
+          	height: 10px;
+          	cursor: pointer;
+          }      
+        }
+
+        #{$self}__title{
+        	font-size: 24px;
+        }
+    }
+
+    &__center{
+        padding-right: 15px;
+        padding-left: 15px;
+        line-height: 55px;
+      }
+
+    &__bottom{
+        padding-right: 15px;
+        padding-left: 15px;
+        height: 70px;
+        border-top: 1px solid #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        #{$self}__close_button{
+        	width: 80px;
+        }
+      }
 }

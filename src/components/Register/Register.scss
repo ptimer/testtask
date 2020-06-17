@@ -7,7 +7,6 @@
     background: $backgroundColor;
     margin: 0 auto;
     font-size: 16px;
-    position: relative;
   
     label{
         text-align: left;
@@ -88,7 +87,6 @@
         top: 0;
         right: 0;
         left: 0;
-        z-index: 5;
         padding: 0 10px;
         line-height: 35px;
         color: #555;
@@ -111,7 +109,6 @@
           top: -.075rem;
           right: -.075rem;
           bottom: -.075rem;
-          z-index: 6;
           padding: 0 20px;
           display: block;
           content: "Browse";
