@@ -1,12 +1,9 @@
 @import '../../styles/_variables.scss';
 
-.AboutMe{
+.about-me{
 	$self: &;
 	text-align: center;
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-top: 160px;
-	padding-bottom: 160px;
+	padding: 160px 30px;
 
 	h2{
 		font-size: 50px;

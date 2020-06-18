@@ -2,7 +2,7 @@
 
 .header{
 	display: grid;
-	padding: 30px 0;
+	padding: 20px 30px;
 	position: fixed;
 	background: $backgroundColor;
 
@@ -10,15 +10,11 @@
 		&{
 			max-width: 1170px;
 			width: 100%;
-			grid-template-columns: 1fr 1fr;
 		}
 	}
 
 	@media screen and (max-width: 1024px){
-		&{
-			padding: 30px;
-			grid-template-columns: 1fr 1fr;
-		}
+		
 	}
 
 	@media screen and (max-width: 768px){

@@ -1,11 +1,12 @@
 import React from 'react';
+import classNames from 'classnames';
 import './Banner.scss'
 
 import { Button } from '../'
 
-export default props => (
-	<div className="Banner">
-		<div className="Banner__content">
+export default ({className }) => (
+	<div className={classNames('banner', className)}>
+		<div className='banner__content'>
 			<h1>Test assignment for frontend developer position</h1>
 			<p>We kindly remind you that your test assignment should be submited 
 			as a link to github/bitbucket repository. Please be patient, we consider

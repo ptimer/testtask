@@ -1,4 +1,4 @@
-.User{
+.user{
 	width: 200px;
 	margin-bottom: 60px;
 
@@ -8,7 +8,7 @@
 		height: 70px;
 	}
 
-	.User__name{
+	.user__name{
 		margin-top: 20px;
 		font-size: 24px;
 		line-height: 29px;
@@ -20,12 +20,12 @@
 		display: block;
 	}
 
-	.User__position{
+	.user__position{
 		margin-bottom: 12px;
 		word-wrap: break-word;
 	}
 
-	.User__email{
+	.user__email{
 		margin-bottom: 12px;
 	}
 }

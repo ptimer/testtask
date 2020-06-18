@@ -1,7 +1,6 @@
 import { userApi } from '../../utils/api'
 import {sortUsersByRegistration} from '../../utils'
 import {registeredActions} from './'
-import store from '../store'
 
 const Actions = {
 	addUsers: data => ({ type: 'USERS:ADD', payload: data }),

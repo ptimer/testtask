@@ -1,8 +1,30 @@
 @import '../../styles/_variables.scss';
 
 .container{
+	display: grid;
+	grid-template-areas:
+	'banner'
+    'about-me'
+    'users'
+    'register';
+
+	.banner{
+		grid-area: banner;
+	}
+
+	.about-me{
+		grid-area: about-me;
+	}
+
+	.users{
+		grid-area: users;
+	}
+
+	.register{
+		grid-area: register;
+	}
+
 	max-width: $maxWidth;
-	margin-top: 60px;
  
 	@media screen and (max-width: 2560px){
 		&{

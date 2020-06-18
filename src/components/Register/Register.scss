@@ -1,11 +1,10 @@
 @import '../../styles/_variables.scss';
 
-.Register{
+.register{
     text-align: center;
     padding-top: 160px;
     padding-bottom: 160px;
     background: $backgroundColor;
-    margin: 0 auto;
     font-size: 16px;
   
     label{
@@ -33,7 +32,7 @@
       margin: 0 auto;
     }
 
-    &__inputBlock{
+    &__input-block{
       display: flex;
       flex-direction: column;
       margin-bottom: 25px;

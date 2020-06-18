@@ -1,9 +1,9 @@
-import React from 'react';
-
+import React from 'react'
+import classNames from 'classnames'
 import './Footer.scss'
 
 const Footer = ({children, className }) => (
-	<footer className="footer">
+	<footer className={classNames('footer', className)}>
 		<p>&copy; abz.agency specially for the test task</p>
 	</footer>
 );

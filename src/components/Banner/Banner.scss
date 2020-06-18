@@ -1,11 +1,10 @@
-.Banner{
+.banner{
 	height: 600px;
 	background-image: url(../../assets/img/banner-photo.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
 	color: white;
-	padding-left: 30px;
+	padding: 0 30px;
 
 
 	&__content{

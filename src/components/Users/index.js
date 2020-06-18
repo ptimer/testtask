@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import propTypes from 'prop-types'
+import classNames from 'classnames'
 import './Users.scss'
 import { Button, List, User } from '../'
 
-const Users = ({showButton, users, showMore}) => {
+const Users = ({showButton, users, showMore, className}) => {
 	return (
-		<div className="Users">
-			<h2 className="Users__title">Let's get acquainted</h2>
-	 		<p className="Users__description">Attention! Sorting users by registration date</p>
+		<div className={classNames('users', className)}>
+			<h2 className='users__title'>Let's get acquainted</h2>
+	 		<p className='users__description'>Attention! Sorting users by registration date</p>
 			<List> {users && users.map(user => <User key={user.id} user={user} />)} </List>	
-			<div className="Users__button"> {showButton ? <Button onClick={showMore}>Show more</Button> : ''} </div>
+			<div className='users__button'> {showButton ? <Button onClick={showMore}>Show more</Button> : ''} </div>
 		</div>
 	)
 }

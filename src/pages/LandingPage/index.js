@@ -1,23 +1,23 @@
-import React from 'react';
+import React from 'react'
 
-import './LandingPage.scss';
+import './LandingPage.scss'
 
-import {Header, Banner, AboutMe, Footer} from '../../components';
-import {Users, Register, Modal} from '../../containers';
+import {Banner, AboutMe, Footer} from '../../components'
+import {Users, Register, Modal, Header} from '../../containers'
 
 
 export default _ => {
 	return (
 		<React.Fragment>
-			<Header />
-			<div className="container">
-				<Banner />
-				<AboutMe />	
-				<Users />
-				<Register />
-				<Modal />
+			<div className='container'>
+				<Header/>
+				<Banner className='banner'/>
+				<AboutMe className='about-me'/>	
+				<Users className='users'/>
+				<Register className='register'/>
+				<Modal/>	
 			</div>
-			<Footer />
+			<Footer/>
 		</React.Fragment>
 	);
 }

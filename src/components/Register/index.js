@@ -1,5 +1,5 @@
 import React from 'react';
-
+import classNames from 'classnames'
 import {Button} from '../'
 import './Register.scss'
 
@@ -14,17 +14,18 @@ export default (props) => {
 	    isValid,
 	    isSubmitting,
 	    setFieldValue,
-	    positions
+	    positions,
+	    className
 	} = props
 
 	return(
-		<div className="Register">
+		<div className={classNames('register', className)}>
 			<h2>Register to get a work</h2>
 			<p>Attention! After successful registration and alert, update
 			the list of users in the block from the top</p>
 
 	          <form onSubmit={handleSubmit}>
-	  			  <div className="Register__inputBlock">
+	  			  <div className='register__input-block'>
 		  			  <label htmlFor="name">Name</label>
 				      <input
 				        id="name"
@@ -38,7 +39,7 @@ export default (props) => {
 	  			  </div>
 			      
 
-				  <div className="Register__inputBlock">
+				  <div className='register__input-block'>
 				      <label htmlFor="email">Email</label>
 				      <input
 				        id="email"
@@ -52,7 +53,7 @@ export default (props) => {
 				  </div>
 
 				  
-				  <div className="Register__inputBlock">
+				  <div className='register__input-block'>
 				      <label htmlFor="number">Phone number</label>
 				      <input
 				        id="number"

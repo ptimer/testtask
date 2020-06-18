@@ -1,9 +1,9 @@
 @import '../../styles/_variables.scss';
 
 .nav{
-
 	font-size: 16px;
 	line-height: 24px;
+	display: flex;
 
 	.active{
 		color: $secondary;
@@ -17,9 +17,39 @@
 			color: $primary;
 		}
 	}
+	
+	.nav__items{
+		ul{
+			display: flex;
+			justify-content: space-between;
+			li{
+				padding-left: 30px;
+			}
+		}
+	}
 
-	ul{
-		display: flex;
-		justify-content: space-between;
+	.spacer{
+		flex: 1;
+	}
+
+	@media screen and (max-width: 2560px){
+	}
+
+	@media screen and (max-width: 1024px){
+	}
+
+	@media screen and (min-width: 768px){
+		.nav__drawer-button{
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 768px){
+		.nav__items{
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 360px){
 	}
 }
