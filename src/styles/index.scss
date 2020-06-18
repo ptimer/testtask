@@ -10,6 +10,10 @@ html {
     scroll-behavior: smooth;
 }
 
+a{
+	text-decoration: none;
+}
+
 body, html, #root, .wrapper{
 	height: 100%;
 	width: 100%;

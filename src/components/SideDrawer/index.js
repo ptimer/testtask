@@ -9,7 +9,7 @@ export default ({visible}) => (
 		<div className='side-drawer__section'>
 			<ul>
 				<li>
-					<a href='#sign-up'>About me</a>
+					<a className='active' href='#sign-up'>About me</a>
 				</li>
 				<li>
 					<a href='#sign-up'>RelationShips</a>
@@ -40,26 +40,26 @@ export default ({visible}) => (
 					<a href='#sign-up'>Leave testimonial</a>
 				</li>
 				<li>
-					<a href='#sign-up'>Terms and Conditions</a>
+					<a href='#sign-up'>Contact us</a>
 				</li>
 			</ul>
 		</div>
 		<div className='side-drawer__section'>
 			<ul>
 				<li>
-					<a href='#sign-up'>About me</a>
+					<a href='#sign-up'>Articles</a>
 				</li>
 				<li>
-					<a href='#sign-up'>RelationShips</a>
+					<a href='#sign-up'>Our news</a>
 				</li>
 				<li>
-					<a href='#sign-up'>Users</a>
+					<a href='#sign-up'>Testimonials</a>
 				</li>
 				<li>
-					<a href='#sign-up'>Sign Up</a>
+					<a href='#sign-up'>Licenses</a>
 				</li>
 				<li>
-					<a href='#sign-up'>Terms and Conditions</a>
+					<a href='#sign-up'>Privacy Policy</a>
 				</li>
 			</ul>
 		</div>
