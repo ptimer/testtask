@@ -1,6 +1,11 @@
 @import '../../styles/_variables.scss';
+@import '../../styles/mixins.scss';
 
 .button{
+	@include mobile{
+		
+	}
+
 	&__input{
 		width: 210px;
 		color: $backgroundColor;

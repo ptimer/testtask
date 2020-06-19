@@ -6,7 +6,10 @@ import './Navigation.scss'
 
 export default ({drawerHandler, className}) => (
 	<nav className={classNames('nav', className)}>
-		<img src={LogoSvg} className='header__logo' alt='logo' />
+		<div className='nav__logo'>
+			<img src={LogoSvg} alt='logo' />
+		</div>
+		
 		<div className='spacer'></div>
 		<div className='nav__items'>
 			<ul>
