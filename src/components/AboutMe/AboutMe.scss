@@ -5,12 +5,12 @@
 	// main styles
 	$self: &;
 	text-align: center;
-	padding: 160px 30px;
+	padding: 150px 30px;
 
 	h2{
-		font-size: 50px;
-		line-height: 54px;
-		margin-bottom: 85px;
+		font-size: 48px;
+	    line-height: 54px;
+	    margin-bottom: 72px;
 	}
 
 	// main block with two columns: image and text
@@ -20,13 +20,13 @@
 			p{
 				font-size: 16px;
 				line-height: 24px;
-				margin-bottom: 25px;
+				margin-bottom: 24px;
 			}
 
 			h3{
 				font-size: 24px;
-				line-height: 34px;
-				margin-bottom: 25px;
+				line-height: 20px;
+				margin-bottom: 17px;
 			}
 
 			a{
@@ -76,6 +76,17 @@
 
 		#{$self}__text{
 			max-width: 550px;
+			p{
+				font-size: 16px;
+				line-height: 24px;
+				margin-bottom: 24px;
+			}
+
+			h3{
+				font-size: 24px;
+				line-height: 20px;
+				margin-bottom: 17px;
+			}
 		}
 
 		#{$self}__image{

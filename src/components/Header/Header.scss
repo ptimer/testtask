@@ -1,27 +1,31 @@
 @import '../../styles/_variables.scss';
+@import '../../styles/mixins.scss';
 
 .header{
 	display: grid;
-	padding: 20px 30px;
+	padding: 0 30px;
 	position: fixed;
 	background: $backgroundColor;
 
-	@media screen and (max-width: 2560px){
-		&{
-			max-width: 1170px;
-			width: 100%;
-		}
+	&{
+		max-width: 1170px;
+		width: 100%;
 	}
 
-	@media screen and (max-width: 1024px){
+	@include xl{
 		
 	}
 
-	@media screen and (max-width: 768px){
+	@include desktop{
+		
+
+	}
+
+	@include tablet{
 		
 	}
 
-	@media screen and (max-width: 360px){
-		
+	@include mobile{
+
 	}
 }

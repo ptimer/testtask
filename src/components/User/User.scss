@@ -8,7 +8,7 @@
 		height: 70px;
 	}
 
-	.user__name{
+	&__name{
 		margin-top: 20px;
 		font-size: 24px;
 		line-height: 29px;
@@ -16,16 +16,38 @@
 		margin-bottom: 21px;
 	}
 
-	span{
+	&>span{
 		display: block;
 	}
 
-	.user__position{
+	&__position{
 		margin-bottom: 12px;
 		word-wrap: break-word;
 	}
 
-	.user__email{
+	&__email{
 		margin-bottom: 12px;
+	}
+
+	&__tooltip{
+		&_text{
+			display: none;
+		}
+		position: relative;
+	}
+
+	&__tooltip:hover{
+		cursor: pointer;
+	}
+
+	&__tooltip:hover &__tooltip_text{
+			color: white;
+			background: black;
+			border-radius: 3px;
+			position: absolute;
+			top: 50px;
+			left: 0;
+			padding: 3px;
+			display: inline-block;
 	}
 }

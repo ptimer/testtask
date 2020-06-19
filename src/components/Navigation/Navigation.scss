@@ -1,10 +1,8 @@
 @import '../../styles/_variables.scss';
+@import '../../styles/mixins.scss';
 
 .nav{
-	font-size: 16px;
-	line-height: 24px;
 	display: flex;
-
 	.active{
 		color: $secondary;
 	}
@@ -18,38 +16,63 @@
 		}
 	}
 	
-	.nav__items{
-		ul{
-			display: flex;
-			justify-content: space-between;
-			li{
-				padding-left: 30px;
-			}
-		}
-	}
-
 	.spacer{
 		flex: 1;
 	}
 
-	@media screen and (max-width: 2560px){
+	@include xl{
+		.nav__drawer-button{
+			display: none;
+		}
+
+		&{
+			font-size: 14px;
+			line-height: 65px;
+		}
+
+		.nav__items{
+		ul{
+				display: flex;
+				justify-content: space-between;
+				li{
+					padding-left: 28.5px;
+				}
+			}
+		}
 	}
 
-	@media screen and (max-width: 1024px){
-	}
+	@include desktop{
+		&{
+			font-size: 14px;
+			line-height: 65px;
+		}
 
-	@media screen and (min-width: 768px){
+		.nav__items{
+		ul{
+				display: flex;
+				justify-content: space-between;
+				li{
+					padding-left: 28.5px;
+				}
+			}
+		}
+
 		.nav__drawer-button{
 			display: none;
 		}
 	}
 
-	@media screen and (max-width: 768px){
+	@include tablet{
+
 		.nav__items{
 			display: none;
 		}
 	}
 
-	@media screen and (max-width: 360px){
+	@include mobile{
+		.nav__items{
+			display: none;
+		}
+
 	}
 }
