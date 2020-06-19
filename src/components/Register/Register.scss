@@ -3,19 +3,12 @@
 
 .register{
     text-align: center;
-    padding-top: 160px;
-    padding-bottom: 160px;
     background: $backgroundColor;
     font-size: 16px;
   
     label{
         text-align: left;
         display: block;
-    }
-
-    h2{
-      font-size: 50px;
-      line-height: 54px;
     }
 
     p{
@@ -223,6 +216,16 @@
     }
 
   @include xl{
+    &{
+      padding-top: 160px;
+      padding-bottom: 160px;
+    }
+
+    h2{
+      font-size: 50px;
+      line-height: 54px;
+    }
+
     label{
       font-size: 15px;
     }
@@ -246,6 +249,15 @@
   }
 
   @include desktop{
+    &{
+      padding-top: 160px;
+      padding-bottom: 160px;
+    }
+
+    h2{
+      font-size: 50px;
+      line-height: 54px;
+    }
 
     label{
       font-size: 15px;
@@ -271,7 +283,35 @@
   }
 
   @include tablet{
-    
+    &{
+      padding: 104px 0;
+    }
+
+    h2{
+      font-size: 40px;
+      line-height: 54px;
+    }
+
+    label{
+      font-size: 15px;
+    }
+
+    p{
+      margin-bottom: 36px;
+    }
+
+    &__input-block{
+      input{
+        font-size: 15px;
+        line-height: 35px;
+        padding: 0 10px;
+        margin-top: 13px;
+      }
+    }
+
+    span{
+        margin-top: 9px;
+      }
   }
 
   @include mobile{

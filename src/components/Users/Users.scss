@@ -4,35 +4,47 @@
 
 .users{
 	text-align: center;
-	padding-top: 160px;
 	padding-bottom: 160px;
 	background: $backgroundColor2;
-
-	&__button{
-		margin-top: 40px;
-	}
-
-	.users__title{
-		font-size: 50px;
-		line-height: 54px;
-	}
-
+	
 	.users__description{
 		margin-top: 20px;
     	margin-bottom: 80px;
 	}
 
 	@include xl{
-		
+		&{
+			padding-top: 160px;
+		}
+
+		.users__title{
+			font-size: 50px;
+			line-height: 54px;
+		}
 	}
 
 	@include desktop{
-		
+		&{
+			padding-top: 160px;
+		}
+
+		.users__title{
+			font-size: 50px;
+			line-height: 54px;
+		}
 
 	}
 
 	@include tablet{
-		
+		&{
+			padding-top: 116px;
+			padding-bottom: 120px;
+		}
+
+		.users__title{
+			font-size: 40px;
+			line-height: 54px;
+		}
 	}
 
 	@include mobile{

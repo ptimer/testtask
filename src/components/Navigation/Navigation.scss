@@ -63,6 +63,12 @@
 	}
 
 	@include tablet{
+		&{
+			display: flex;
+			align-items: center;
+			font-size: 14px;
+			height: 60px;
+		}
 
 		.nav__items{
 			display: none;
