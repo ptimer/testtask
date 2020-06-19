@@ -7,7 +7,7 @@ export default ({user, className}) => (
 	<div className={classNames('user', className)}>
 	{console.log( user.photo) }
 		{user && <Fragment><img src={!user.photo ? photoCoverSvg : user.photo} alt={user.name}/>
-				 <h3 className='user_name'>{user.name}</h3>
+				 <h3 className='user__name'>{user.name}</h3>
 				 <span className='user__position'>{user.position}</span>
 				 <span className={classNames('user__email', {'user__tooltip': user.email.length > 20})}>
 				 	{user.email.length > 20 ? `${user.email.substring(0, 20)}...` : user.email}

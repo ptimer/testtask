@@ -93,7 +93,7 @@ export default (props) => {
 					   onChange={(event) => {
 						  setFieldValue("file", event.currentTarget.files[0]);
 					   }}
-		               onBlur={handleBlur}/>/>
+		               onBlur={handleBlur}/>
 					  <span className="file__custom"></span>
 					</label>
 				  </div>

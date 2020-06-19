@@ -1,6 +1,10 @@
+@import '../../styles/_variables.scss';
+@import '../../styles/mixins.scss';
+
 .user{
 	width: 200px;
 	margin-bottom: 60px;
+	word-break: break-word;
 
 	img{
 		border-radius: 50%;

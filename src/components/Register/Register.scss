@@ -1,4 +1,5 @@
 @import '../../styles/_variables.scss';
+@import '../../styles/mixins.scss';
 
 .register{
     text-align: center;
@@ -23,7 +24,6 @@
       width: 450px;
       margin: 0 auto;
       margin-top: 19px;
-      margin-bottom: 40px;
       line-height: 22px;
     }
 
@@ -40,10 +40,6 @@
       input{
         border: 1px solid #ddd;
         border-radius: 3px;
-        padding: 10px;
-        font-size: 16px;
-        line-height: 24px;
-        margin-top: 10px;
 
         &:focus{
           outline-color: $secondary;
@@ -54,7 +50,6 @@
         font-size: 12px;
         text-align: left;
         display: block;
-        margin-top: 5px;
       }
       
     }
@@ -83,7 +78,7 @@
       &__custom{
         text-align: left;
         position: absolute;
-        top: 0;
+        top: -7px;
         right: 0;
         left: 0;
         padding: 0 10px;
@@ -108,7 +103,7 @@
           top: -.075rem;
           right: -.075rem;
           bottom: -.075rem;
-          padding: 0 20px;
+          padding: 0 13px;
           display: block;
           content: "Browse";
           line-height: 35px;
@@ -122,14 +117,14 @@
 
     .radio_block{
       
-      margin: 30px 0;
+      margin: 21px 0px 13px 0px;
 
       .control {
         width: 100%;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
         position: relative;
         display: inline-block;
-        padding-left: 1.5rem;
+        padding-left: 24px;
         color: #555;
         cursor: pointer;
 
@@ -141,8 +136,8 @@
 
         &__indicator{
           position: absolute;
-          left: 0;
-          top: 1px;
+          left: -1px;
+          top: -10px;
           display: block;
           width:  17px;
           height: 17px;
@@ -227,21 +222,60 @@
       display: block;
     }
 
-    @media screen and (max-width: 2560px){
-
+  @include xl{
+    label{
+      font-size: 15px;
     }
 
-    @media screen and (max-width: 1024px){
-      
+    p{
+      margin-bottom: 36px;
     }
 
-    @media screen and (max-width: 768px){
-      
-      
+    &__input-block{
+      input{
+        font-size: 15px;
+        line-height: 35px;
+        padding: 0 10px;
+        margin-top: 13px;
+      }
     }
 
-    @media screen and (max-width: 360px){
-      
+    span{
+        margin-top: 9px;
+      }
+  }
+
+  @include desktop{
+
+    label{
+      font-size: 15px;
     }
+
+    p{
+      margin-bottom: 36px;
+    }
+
+    &__input-block{
+      input{
+        font-size: 15px;
+        line-height: 35px;
+        padding: 0 10px;
+        margin-top: 13px;
+      }
+    }
+
+    span{
+        margin-top: 9px;
+      }
+  
+  }
+
+  @include tablet{
+    
+  }
+
+  @include mobile{
+
+  }
     
 }
