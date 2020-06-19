@@ -2,7 +2,7 @@ import React, {useState, useEffect, Fragment} from 'react'
 import {Header, SideDrawer, Backdrop} from '../components'
 
 export default _ => {
-	const [open, setOpen] = useState(true)
+	const [open, setOpen] = useState(false)
 
 	return (
 		<Fragment>

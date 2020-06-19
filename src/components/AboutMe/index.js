@@ -7,7 +7,10 @@ const AboutMe = ({className}) => (
 	<div className={classNames('about-me', className)}>
 		<h2>Let's get acquainted</h2>
 		<div className='about-me__content'>
-			<img src={ManLaptopV1} alt='man laptop'/>
+			<div className='about-me__image'>
+				<img src={ManLaptopV1} alt='man laptop'/>
+			</div>
+			
 			<div className='about-me__text'>
 				<h3>I am cool frontend developer</h3>
 				<p>We will evaluate how clean your approach to writing css and javascript
@@ -18,7 +21,7 @@ const AboutMe = ({className}) => (
 					(gulp/webpack) you will get bonus points as well. Slice service directory
 					page PSD mockup into HTML5/CSS3.
 				</p>
-				<a href='http://localhost:3000/?name=&email=&phone=&photo='>Sign up now</a>
+				<a href='#signup'>Sign up now</a>
 			</div>
 			
 		</div>

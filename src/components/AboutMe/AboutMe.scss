@@ -1,6 +1,8 @@
 @import '../../styles/_variables.scss';
+@import '../../styles/mixins.scss';
 
 .about-me{
+	// main styles
 	$self: &;
 	text-align: center;
 	padding: 160px 30px;
@@ -11,19 +13,103 @@
 		margin-bottom: 85px;
 	}
 
+	// main block with two columns: image and text
 	&__content{
 		text-align: justify;
+		#{$self}__text{
+			p{
+				font-size: 16px;
+				line-height: 24px;
+				margin-bottom: 25px;
+			}
 
+			h3{
+				font-size: 24px;
+				line-height: 34px;
+				margin-bottom: 25px;
+			}
 
-		img{
-			width: 340px;
+			a{
+				color: $primary;
+				font-weight: bold;
+			}
+		}
+	}
+
+	// Media queries
+
+	@include xl{
+		&__content{
+			display: grid;
+			grid-template-columns: 36% 58%;
+			justify-content: space-between;
 		}
 
-		display: grid;
-		grid-template-columns: 390px auto;
+		#{$self}__image{
+			// to align image to top
+			display: flex;
+    		align-items: flex-start;
 
+			img{
+				max-width: 100%;
+			}
+		}
 
 		#{$self}__text{
+			display: flex;
+		    flex-direction: column;
+		    justify-content: space-around;
+
+		    p, h3{
+		    	margin: 0;
+		    }	
+		}
+	}
+
+	@include desktop{
+		&__content{
+			display: grid;
+			grid-template-columns: 390px auto;
+			justify-content: end;
+			text-align: justify;
+		}
+
+		#{$self}__text{
+			max-width: 550px;
+		}
+
+		#{$self}__image{
+			// to align image to top
+			display: flex;
+    		align-items: flex-start;
+
+			img{
+				max-width: 340px;
+			}
+		}
+	}
+
+	@include tablet{
+		&{
+			padding: 120px 30px;
+		}
+
+		h2{
+			font-size: 39px;
+			line-height: 44px;
+			margin-bottom: 82px;
+		}
+
+		&__content{
+			display: grid;
+			grid-gap: 20px;
+			grid-template-columns: 258px 1fr;
+		}
+
+		#{$self}__text{
+			font-size: 16px;
+			line-height: 24px;
+
 			p{
 				font-size: 16px;
 				line-height: 24px;
@@ -35,28 +121,67 @@
 				line-height: 29px;
 				margin-bottom: 25px;
 			}
+		}
 
-			a{
-				text-decoration: none;
-				color: $primary;
-				font-weight: 600;
+		#{$self}__image{
+			// to align image to top
+			display: flex;
+    		align-items: flex-start;
+			img{
+				max-width: 250px;
+			}
+		}
+	}
+
+	@include mobile{
+		&{
+			padding: 80px 15px;
+		}
+
+		h2{
+			font-size: 40px;
+			line-height: 44px;
+			margin-bottom: 0;
+		}
+
+		&__content{
+			grid-template-columns: 1fr;
+
+			#{$self}__image{
+				text-align: center;
+				margin: 33px 35px 43px;
+
+				img{
+					width: 100%;
+				}
 			}
 		}
 
-		@media screen and (max-width: 2560px){
+		#{$self}__text{
+			font-size: 16px;
+			line-height: 24px;
 
-		}
+			p{
+				font-size: 23px;
+				line-height: 29px;
+				margin-top: 30px;
+				margin-bottom: 44px;
+			}
 
-		@media screen and (max-width: 1024px){
-			
-		}
+			h3{
+				text-align: center;
+				font-size: 35px;
+				line-height: 34px;
+			}
 
-		@media screen and (max-width: 768px){
-		}
-
-		@media screen and (max-width: 360px){
-
+			a{
+				font-size: 23px;
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				color: $primary;
+				font-weight: bold;
+			}
 		}
 	}
-	
 }
