@@ -19,12 +19,12 @@ export default (props) => {
 	} = props
 
 	return(
-		<div className={classNames('register', className)}>
+		<div className={classNames('register', className)} id='sign-up'>
 			<h2>Register to get a work</h2>
 			<p>Attention! After successful registration and alert, update
 			the list of users in the block from the top</p>
 
-	          <form onSubmit={handleSubmit} id='sign-up'>
+	          <form onSubmit={handleSubmit}>
 	  			  <div className='register__input-block'>
 		  			  <label htmlFor="name">Name</label>
 				      <input
