@@ -13,6 +13,8 @@ export default _ => {
 
 	return (
 		<Fragment>
+			{/* Если кликаем значок меню в мобильной версии,
+			то появляется боковое меню (SideDrawer) и прозрачный фон (Backdrop)*/}
 			<Header drawerHandler={_ => setOpen(prev => !prev)}/>
 			<SideDrawer visible={open} linkClicked={_ => setOpen(false)} />
 			{open ? <Backdrop onClick={_ => setOpen(false)}/> : null}

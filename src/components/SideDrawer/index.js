@@ -7,7 +7,8 @@ import LogoSvg from '../../assets/img/logo.svg'
 export default ({visible, linkClicked}) => (
 	<nav className={classNames('side-drawer', {'open': visible})}>
 		<img src={LogoSvg} className='side-drawer__logo' alt='logo' />
-{/* Разбиваем на массив ссылок на чанки, чтобы вывести по отдельным блокам каждые 5 ссылок */}
+		{/* Разбиваем на массив ссылок на чанки, чтобы вывести 
+		по отдельным блокам каждые 5 ссылок */}
 		{splitToChunks(links, 5).map((group, index) => {
 			return (<div className='side-drawer__section' key={index}>
 				<ul>

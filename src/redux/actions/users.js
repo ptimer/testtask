@@ -6,7 +6,9 @@ const Actions = {
 	addUsers: data => ({ type: 'USERS:ADD', payload: data }),
 
 	cleanUsers: _ => ({type: 'USERS:CLEAN'}),
-
+	/* Регистрация */
+	/* Получаем токен, делаем post запрос, очищаем массив с юзерами,
+	   получаем новых юзеров, сортируем, возвращаем promise */
 	fetchUserRegister: formData => dispatch => {
 		return userApi
 		.getToken()
