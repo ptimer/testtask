@@ -54,4 +54,32 @@
 			padding: 3px;
 			display: inline-block;
 	}
+
+	@include xl{
+		&{
+			
+		}
+	}
+
+	@include desktop{
+	
+	}
+
+	@include tablet{
+		
+	}
+
+	@include mobile{
+		&{
+			margin-bottom: 40px;
+		}
+
+		&>span{
+			font-size: 16px;
+		}
+
+		&__name{
+			margin-bottom: 10px;
+		}
+	}
 }

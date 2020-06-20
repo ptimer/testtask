@@ -48,7 +48,19 @@
 	}
 
 	@include mobile{
+		.users__title{
+			font-size: 30px;
+    		margin-top: 81px;
+		}
 
+		.users__description{
+			margin-top: 16px;
+   			margin-bottom: 34px;
+		}
+
+		&{
+			padding-bottom: 80px;
+		}
 	}
 	
 }

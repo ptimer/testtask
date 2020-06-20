@@ -5,32 +5,33 @@
 	display: grid;
 	position: fixed;
 	background: $backgroundColor;
-
-	&{
-		max-width: 1170px;
-		width: 100%;
-	}
-
+	width: 100%;
+	
 	@include xl{
 		&{
+			
+			max-width: $maxWidth;
 			padding: 0 30px;
 		}
 	}
 
 	@include desktop{
 		&{
+			max-width: $desktop;
 			padding: 0 30px;
 		}
 	}
 
 	@include tablet{
 		&{
+			max-width: $tablet;
 			padding: 0 30px;
 		}
 	}
 
 	@include mobile{
 		&{
+			max-width: $mobile;
 			padding: 0 15px;
 		}
 	}

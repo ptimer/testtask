@@ -146,13 +146,15 @@
 
 	@include mobile{
 		&{
-			padding: 80px 15px;
+			max-width: $mobile;
+			padding: 0 15px;
 		}
 
 		h2{
-			font-size: 40px;
-			line-height: 44px;
-			margin-bottom: 0;
+			font-size: 30px;
+			line-height: 27px;
+			margin-top: 80px;
+			margin-bottom: 24px;
 		}
 
 		&__content{
@@ -160,8 +162,8 @@
 
 			#{$self}__image{
 				text-align: center;
-				margin: 33px 35px 43px;
-
+				padding: 17px;
+				margin-bottom: 8px;
 				img{
 					width: 100%;
 				}
@@ -173,25 +175,25 @@
 			line-height: 24px;
 
 			p{
-				font-size: 23px;
-				line-height: 29px;
-				margin-top: 30px;
-				margin-bottom: 44px;
+				font-size: 16px;
+			    line-height: 23px;
+			    margin-top: 25px;
+			    margin-bottom: 30px;
 			}
 
 			h3{
 				text-align: center;
-				font-size: 35px;
-				line-height: 34px;
+				font-size: 24px;
 			}
 
 			a{
-				font-size: 23px;
+				font-size: 16px;
 				display: block;
 				text-align: center;
 				text-decoration: none;
 				color: $primary;
 				font-weight: bold;
+				margin-bottom: 72px;
 			}
 		}
 	}

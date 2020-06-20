@@ -1,9 +1,14 @@
 @import '../../styles/_variables.scss';
+@import '../../styles/mixins.scss';
 
 .list{
 	padding: 0 30px;
 
-	@media screen and (max-width: 2560px){
+	@include xl{
+		&{
+			
+		}
+
 		&__users{
 			display: grid;
 			grid-template-columns: 200px 200px 200px;
@@ -11,22 +16,33 @@
 		}
 	}
 
-	@media screen and (max-width: 1024px){
-		
+	@include desktop{
+		&__users{
+			display: grid;
+			grid-template-columns: 200px 200px 200px;
+			justify-content: space-around;
+		}
 	}
 
-	@media screen and (max-width: 768px){
-		
-		
+	@include tablet{
+		&__users{
+			display: grid;
+			grid-template-columns: 200px 200px 200px;
+			justify-content: space-around;
+		}
 	}
 
-	@media screen and (max-width: 360px){
+	@include mobile{
+		&{
+			
+		}
+
 		&__users{
 			display: grid;
 			grid-template-columns: 200px;
-			grid-template-rows: 200px 200px 200px;
+			grid-template-rows: auto;
 			justify-content: space-around;
-		}	
+		}
 	}
 	
 }
