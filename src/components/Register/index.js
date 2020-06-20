@@ -24,7 +24,7 @@ export default (props) => {
 			<p>Attention! After successful registration and alert, update
 			the list of users in the block from the top</p>
 
-	          <form onSubmit={handleSubmit}>
+	          <form onSubmit={handleSubmit} id='sign-up'>
 	  			  <div className='register__input-block'>
 		  			  <label htmlFor="name">Name</label>
 				      <input

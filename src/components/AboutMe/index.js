@@ -21,7 +21,7 @@ const AboutMe = ({className}) => (
 					(gulp/webpack) you will get bonus points as well. Slice service directory
 					page PSD mockup into HTML5/CSS3.
 				</p>
-				<a href='#signup'>Sign up now</a>
+				<a href='#sign-up'>Sign up now</a>
 			</div>
 			
 		</div>

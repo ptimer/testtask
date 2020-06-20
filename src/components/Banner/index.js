@@ -13,7 +13,7 @@ export default ({className }) => (
 			and respond to every application that meets minimun requirements.
 			We look forward to your submission. Good luck! The photo has to scale
 			in the banner area on the different screens</p>
-			<Button>Sign up now</Button>
+			<a href='#sign-up'><Button>Sign up now</Button></a>
 		</div>
 		
 	</div>
