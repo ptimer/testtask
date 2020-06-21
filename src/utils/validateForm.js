@@ -31,8 +31,17 @@ export default ({ values, errors }) => {
     },
 
     photo: value => {
+      console.log(value)
+      if(!(value.type == 'image/jpeg' || value.type == 'image/jpg')){
+        errors.photo = 'Фотография должна быть jpeg или jpg формата'
+      }
+
+      if(value.size/1024/1024 >= 5){
+        errors.photo = 'Фотография не должна превышать размер 5 мб'
+      }
+
       if(!value){
-        errors.photo = 'Отсутствует фото'
+        errors.photo = 'Отсутствует фотография'
       }
     }
   };

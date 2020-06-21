@@ -21,7 +21,9 @@
         border-radius: 3px;
 
         &:focus{
-          outline-color: $secondary;
+          outline: none;
+          border: 1px solid $lightblue;
+          box-shadow: 0 0 4px $lightblue;
         }
 
         &::placeholder{
@@ -38,19 +40,28 @@
     }
 
     &__input_error{
-        outline-color: $lightred !important;
+        &:focus{
+          outline-color: none;
+          border: 1px solid $lightred !important;
+          box-shadow: 0 0 4px $lightred !important;
+        }
         border: 1px solid $lightred !important;
     }
 
     &__file_error{
-      &:before{
-        border: .075rem solid $lightred !important;
+      .file__custom{
+        border: 1px solid $lightred !important;
+      }
+
+      .file__custom:before{
+        border: 1px solid $lightred !important;
       }
     }
 
     &__file_error{
       & input:focus ~ .file__custom{
-        box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem $lightred !important;
+        border: 1px solid $lightred !important;
+        box-shadow: 0 0 4px $lightred !important;
       }
     }
 
@@ -83,7 +94,13 @@
       }
 
       & input:focus ~ .file__custom{
-        box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;
+        border: 1px solid $lightblue;
+        box-shadow: 0 0 4px $lightblue;
+      }
+
+      & input:focus ~ .file__custom:before{
+        border: 1px solid $lightblue;
+        box-shadow: 0 0 4px $lightblue;
       }
 
       &__custom{

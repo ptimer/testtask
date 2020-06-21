@@ -69,8 +69,8 @@ export default (props) => {
 		                onBlur={handleBlur}
 		                className={classNames({register__input_error: errors.phone && touched.phone})}
 				      />
-				      <span className='register__span_error'>{errors.phone && touched.phone ? errors.phone : ''}</span>
-				      <span>Enter phone number in open format</span>
+				      {errors.phone && touched.phone ? <span className='register__span_error'>{errors.phone}</span>:
+				      <span>Enter phone number in open format</span>}
 				  </div>
 				
 				  <label htmlFor="radio_block">Select your position</label>
@@ -89,7 +89,7 @@ export default (props) => {
 						  	);
 						})}
 				  </div>
-					
+				  {/* Немножко костыль :D */}
 				  <label htmlFor="image_block">Photo</label>
 				  <div id="image_block">
 				  	<label className={classNames('file', {register__file_error: errors.photo && touched.photo})} >
@@ -98,13 +98,12 @@ export default (props) => {
 					   id="photo" 
 					   onChange={(event) => {
 						  setFieldValue("photo", event.currentTarget.files[0])
+						  // Устанавливаем атрибут с именем файла, чтобы вывести его в after{content: ''}
 						  file__custom.current.setAttribute('data-after',
 						  event.currentTarget.files[0] != undefined ? event.currentTarget.files[0].name : 'Upload your photo')
 					   }}
 		               onBlur={handleBlur}/>
-					  <span className={classNames('file__custom', 
-					  	{register__input_error: errors.photo && touched.photo,
-					  	 register__file_error: errors.photo && touched.photo})} 
+					  <span className='file__custom' 
 					  ref={file__custom}></span>
 					  <span className='register__filetxt_error'>{errors.photo && touched.photo ? errors.photo : ''}</span>
 					</label>
