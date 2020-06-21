@@ -7,11 +7,15 @@
 	}
 
 	&__input{
+		-moz-appearance: none;
+		-webkit-appearance: none;
 		width: 210px;
 		color: $backgroundColor;
 		background: $primary;
 		outline-style: none;
 		border: none;
+		border: none;
+		border-radius: 5px;
 		border-radius: 5px;
 		font-size: 16px;
 		line-height: 35px;
