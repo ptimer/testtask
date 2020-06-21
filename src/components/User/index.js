@@ -10,7 +10,6 @@ export default ({user, className}) => {
 
 	return (
 		<div className={classNames('user', className)}>
-		{console.log( user.photo) }
 			{user && 
 				<Fragment>
 					<img src={photo} onError={_ => setPhoto(photoCoverSvg)} alt={user.name}/>

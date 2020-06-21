@@ -17,11 +17,15 @@
       margin-bottom: 25px;
 
       input{
-        border: 1px solid #ddd;
+        border: 1px solid $gray;
         border-radius: 3px;
 
         &:focus{
           outline-color: $secondary;
+        }
+
+        &::placeholder{
+          color: $gray;
         }
       }
 
@@ -33,6 +37,34 @@
       
     }
 
+    &__input_error{
+        outline-color: $lightred !important;
+        border: 1px solid $lightred !important;
+    }
+
+    &__file_error{
+      &:before{
+        border: .075rem solid $lightred !important;
+      }
+    }
+
+    &__file_error{
+      & input:focus ~ .file__custom{
+        box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem $lightred !important;
+      }
+    }
+
+    &__span_error{
+      color: $lightred;
+    }
+
+    &__filetxt_error{
+      color: $lightred;
+      font-size: 12px;
+      position: absolute;
+      top: 43px;
+      left: 0;
+    }
 
     .file {
       margin-bottom: 40px;
@@ -60,6 +92,7 @@
         top: -7px;
         right: 0;
         left: 0;
+        height: 2.5rem;
         padding: 0 10px;
         line-height: 35px;
         color: #555;
@@ -74,7 +107,8 @@
 
 
         &:after{
-          content: "Upload your photo";
+          color: $gray;
+          content: attr(data-after);
         }
 
         &:before{
@@ -86,9 +120,9 @@
           display: block;
           content: "Browse";
           line-height: 35px;
-          color: #555;
+          color: black;
           background-color: #eee;
-          border: .075rem solid #ddd;
+          border: .075rem solid $gray;
           border-radius: 0 .25rem .25rem 0;
         }
       }
@@ -104,7 +138,7 @@
         position: relative;
         display: inline-block;
         padding-left: 24px;
-        color: #555;
+        color: black;
         cursor: pointer;
 
         & input {
@@ -205,6 +239,7 @@
     form{
       width: 465px;
       margin: 0 auto;
+      margin-top: 30px;
     }
 
     &{

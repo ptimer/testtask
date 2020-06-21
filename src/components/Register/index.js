@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 import classNames from 'classnames'
 import {Button} from '../'
 import './Register.scss'
 
 export default (props) => {
+	/* Для того, чтобы поставить content в file__custom::after в css, устанавливаем атрибут с именем файла */
+	const file__custom = useRef()
+	useEffect(_ => file__custom.current.setAttribute('data-after', 'Upload your photo'), [])
 	const {
 	    values,
 	    touched,
@@ -15,7 +18,7 @@ export default (props) => {
 	    isSubmitting,
 	    setFieldValue,
 	    positions,
-	    className
+	    className,
 	} = props
 
 	return(
@@ -34,8 +37,9 @@ export default (props) => {
 				        placeholder="Your name"
 				        onChange={handleChange}
 		                onBlur={handleBlur}
+		                className={classNames({register__input_error: errors.name && touched.name})}
 				      />
-				      {errors.name ? errors.name : ''}
+				      <span className='register__span_error'>{errors.name && touched.name ? errors.name : ''}</span>
 	  			  </div>
 			      
 
@@ -48,8 +52,9 @@ export default (props) => {
 				        name="email"
 				        onChange={handleChange}
 		                onBlur={handleBlur}
+		                className={classNames({register__input_error: errors.email && touched.email})}
 				      />
-				      {errors.email ? errors.email : ''}
+				      <span className='register__span_error'>{errors.email && touched.email ? errors.email : ''}</span>
 				  </div>
 
 				  
@@ -62,8 +67,9 @@ export default (props) => {
 				        placeholder="+380 XX XXX XX XX"
 				        onChange={handleChange}
 		                onBlur={handleBlur}
+		                className={classNames({register__input_error: errors.phone && touched.phone})}
 				      />
-				      {errors.phone ? errors.phone : ''}
+				      <span className='register__span_error'>{errors.phone && touched.phone ? errors.phone : ''}</span>
 				      <span>Enter phone number in open format</span>
 				  </div>
 				
@@ -86,15 +92,21 @@ export default (props) => {
 					
 				  <label htmlFor="image_block">Photo</label>
 				  <div id="image_block">
-				  	<label className="file">
+				  	<label className={classNames('file', {register__file_error: errors.photo && touched.photo})} >
 					  <input type="file" 
-					  name="photo"
-					   id="file" 
+					   name="photo"
+					   id="photo" 
 					   onChange={(event) => {
-						  setFieldValue("file", event.currentTarget.files[0]);
+						  setFieldValue("photo", event.currentTarget.files[0])
+						  file__custom.current.setAttribute('data-after',
+						  event.currentTarget.files[0] != undefined ? event.currentTarget.files[0].name : 'Upload your photo')
 					   }}
 		               onBlur={handleBlur}/>
-					  <span className="file__custom"></span>
+					  <span className={classNames('file__custom', 
+					  	{register__input_error: errors.photo && touched.photo,
+					  	 register__file_error: errors.photo && touched.photo})} 
+					  ref={file__custom}></span>
+					  <span className='register__filetxt_error'>{errors.photo && touched.photo ? errors.photo : ''}</span>
 					</label>
 				  </div>
 			      <Button>Sign up now</Button>

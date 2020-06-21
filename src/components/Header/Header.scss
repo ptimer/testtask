@@ -6,6 +6,7 @@
 	position: fixed;
 	background: $backgroundColor;
 	width: 100%;
+	z-index: auto;
 	
 	@include xl{
 		&{

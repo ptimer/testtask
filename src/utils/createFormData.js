@@ -5,6 +5,6 @@ export default values => {
     formData.append('name', dataToPost.name)
     formData.append('email', dataToPost.email)
     formData.append('phone', dataToPost.phone)
-    formData.append('photo', values.file)
+    formData.append('photo', values.photo)
     return formData;
 }
