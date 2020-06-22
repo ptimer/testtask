@@ -3,9 +3,16 @@ import {connect} from 'react-redux'
 import { Users as UsersList } from '../components'
 import { usersActions, registeredActions } from '../redux/actions'
 import store from '../redux/store'
-import {sortUsersByRegistration} from '../utils'
+import {sortUsersByRegistration, variables} from '../utils'
+import withSizes from 'react-sizes'
+import { compose } from 'recompose'
 
-const Users = ({users, registered}) => {
+// Для отображения 3-х пользователей в мобильной версии
+const enhancer = compose(
+  withSizes(({ width }) => ({ isMobile: width <= variables.mobileWidth }))
+)
+
+const Users = enhancer(({users, registered, isMobile}) => {
 	const [nextUrl, setNextUrl] = useState(null)
 	const link = 'https://frontend-test-assignment-api.abz.agency/api/v1/'
 
@@ -18,18 +25,18 @@ const Users = ({users, registered}) => {
 		})
 	}
 	/* Отображаем пользователей при первой загрузке страницы */
-	useEffect(_ => getUsers(`${link}users?page=1&count=6`),[])
+	useEffect(_ => getUsers(`${link}users?page=1&count=${isMobile ? 3 : 6}`),[])
 	/* Когда юзер прошел регистрацию, то меняем состояние следующей ссылки на дефолтное */
 	useEffect(_ => {
 		if(registered){
-			setNextUrl(`${link}users?page=2&count=6`)
+			setNextUrl(`${link}users?page=2&count=${isMobile ? 3 : 6}`)
 			store.dispatch(registeredActions.setRegistered(false))
 		}
 	})
 	/* При клике show more делаем запрос, сортируем юзеров по дате регистрации
 	и устанавливаем следующую ссылку на полученную с get запроса */
 	return <UsersList users={users} showMore={_ => getUsers(nextUrl)} showButton={nextUrl != null} />
-}
+})
 
 export default connect(
 	({ users, registered }) => ({users, registered})

@@ -1,11 +1,13 @@
-import React from 'react';
-import classNames from 'classnames';
+import React from 'react'
+import classNames from 'classnames'
 import './Banner.scss'
-import sizes from 'react-sizes';
+import sizes from 'react-sizes'
+import {variables} from '../../utils'
 
 import { Button } from '../'
 
 const Banner = ({className, mobile}) => (
+
 	<div className={classNames('banner', className)}>
 		<div className='banner__content'>
 			<h1>Test assignment for frontend developer position</h1>
@@ -24,7 +26,7 @@ const Banner = ({className, mobile}) => (
 
 // Для отображения другого текста на мобильной версии
 const mapSizesToProps = ({width}) => ({
-	mobile: (width && width <= 360),
+	mobile: (width && width <= variables.mobileWidth),
 })
 
 export default sizes(mapSizesToProps)(Banner)
