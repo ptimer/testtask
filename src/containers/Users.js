@@ -5,14 +5,10 @@ import { usersActions, registeredActions } from '../redux/actions'
 import store from '../redux/store'
 import {sortUsersByRegistration, variables} from '../utils'
 import withSizes from 'react-sizes'
-import { compose } from 'recompose'
+import compose from 'recompose/compose'
 
-// Для отображения 3-х пользователей в мобильной версии
-const enhancer = compose(
-  withSizes(({ width }) => ({ isMobile: width <= variables.mobileWidth }))
-)
 
-const Users = enhancer(({users, registered, isMobile}) => {
+const Users = ({users, registered, isMobile}) => {
 	const [nextUrl, setNextUrl] = useState(null)
 	const link = 'https://frontend-test-assignment-api.abz.agency/api/v1/'
 
@@ -41,8 +37,10 @@ const Users = enhancer(({users, registered, isMobile}) => {
 	/* При клике show more делаем запрос, сортируем юзеров по дате регистрации
 	и устанавливаем следующую ссылку на полученную с get запроса */
 	return <UsersList users={users} showMore={_ => getUsers(nextUrl)} showButton={nextUrl != null} />
-})
+}
 
-export default connect(
-	({ users, registered }) => ({users, registered})
+// Для отображения 3-х пользователей в мобильной версии используем withSizes
+export default compose(
+	connect(({ users, registered }) => ({users, registered})),
+	withSizes(({ width }) => ({ isMobile: width <= variables.mobileWidth }))
 )(Users)
