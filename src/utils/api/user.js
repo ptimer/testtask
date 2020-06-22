@@ -21,13 +21,13 @@ export default {
 };
 
 function getUsersError(){
-	throw 'Не получилось получить список пользователей'
+	throw new Error('Не получилось получить список пользователей')
 }
 
 function postUsersError(){
-	throw 'Неудачная попытка добавить пользователя'
+	throw new Error('Неудачная попытка добавить пользователя')
 }
 
 function getTokenError(){
-  throw 'Не удалось получить токен'
+  throw new Error('Не удалось получить токен')
 }

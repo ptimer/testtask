@@ -31,7 +31,6 @@ export default ({ values, errors }) => {
     },
 
     photo: value => {
-      console.log(value)
       if(!(value.type == 'image/jpeg' || value.type == 'image/jpg')){
         errors.photo = 'Фотография должна быть jpeg или jpg формата'
       }

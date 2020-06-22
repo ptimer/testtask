@@ -342,7 +342,7 @@
 
   @include tablet{
     form{
-      width: 465px;
+      width: 60%;
       margin: 0 auto;
     }
 
@@ -360,12 +360,11 @@
     }
 
     p{
-      margin-top: 30px;
-      margin-bottom: 36px;
-      width: 450px;
+      width: 58%;
       margin: 0 auto;
-      margin-top: 19px;
       line-height: 22px;
+      margin-top: 19px;
+      margin-bottom: 36px;
     }
 
     &__input-block{

@@ -8,14 +8,11 @@ export default (props) => {
 	const file__custom = useRef()
 	useEffect(_ => file__custom.current.setAttribute('data-after', 'Upload your photo'), [])
 	const {
-	    values,
 	    touched,
 	    errors,
 	    handleChange,
 	    handleBlur,
 	    handleSubmit,
-	    isValid,
-	    isSubmitting,
 	    setFieldValue,
 	    positions,
 	    className,
@@ -100,7 +97,7 @@ export default (props) => {
 						  setFieldValue("photo", event.currentTarget.files[0])
 						  // Устанавливаем атрибут с именем файла, чтобы вывести его в after{content: ''}
 						  file__custom.current.setAttribute('data-after',
-						  event.currentTarget.files[0] != undefined ? event.currentTarget.files[0].name : 'Upload your photo')
+						  event.currentTarget.files[0] !== undefined ? event.currentTarget.files[0].name : 'Upload your photo')
 					   }}
 		               onBlur={handleBlur}/>
 					  <span className='file__custom' 

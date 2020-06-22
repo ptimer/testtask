@@ -7,5 +7,5 @@ export default {
 };
 
 function getPositionError(){
-	throw 'Не удалось получить список вакансий'
+	throw new Error('Не удалось получить список вакансий')
 }

@@ -19,14 +19,14 @@ const Actions = {
 		.then(data => dispatch(Actions.addUsers([...sortUsersByRegistration(data.users)])))
 	},
 
-	getUsers: data => () => {
+	getUsers: data => _ => {
 	 	return userApi.getUsers(data)
 	},
-	getToken: _ => () => {
+	getToken: _ => _ => {
 	 	return userApi.getToken()
 	},
 
-	setSignUp: data => () => {
+	setSignUp: data => _ => {
 		return userApi.signUp(data)
 	},
 }

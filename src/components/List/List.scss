@@ -26,9 +26,9 @@
 
 	@include tablet{
 		&__users{
-			display: grid;
-			grid-template-columns: 200px 200px 200px;
-			justify-content: space-around;
+			display: flex;
+		    flex-wrap: wrap;
+		    justify-content: space-between;
 		}
 	}
 
@@ -39,7 +39,6 @@
 
 		&__users{
 			display: grid;
-			grid-template-columns: 200px;
 			grid-template-rows: auto;
 			justify-content: space-around;
 		}
