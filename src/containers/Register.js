@@ -7,13 +7,13 @@ import store from '../redux/store'
 
 const Register = props => {
 	
-  const [positions, setPositions] = useState([])
+    const [positions, setPositions] = useState([])
 
-  /* Получаем список вакансий */
+    /* Получаем список вакансий */
 	useEffect(_ => {
-    store
-      .dispatch(positionsActions.getPositions())
-      .then(data => setPositions(data.positions))
+	    store
+	      .dispatch(positionsActions.getPositions())
+	      .then(data => setPositions(data.positions))
 	}, [])
 	
 	return <RegisterComponent {...props} positions={ positions } />
