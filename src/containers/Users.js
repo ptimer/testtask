@@ -16,6 +16,11 @@ const Users = enhancer(({users, registered, isMobile}) => {
 	const [nextUrl, setNextUrl] = useState(null)
 	const link = 'https://frontend-test-assignment-api.abz.agency/api/v1/'
 
+	/* !!! На мобильной версии будет выдавать ошибку при нажатии на show more,
+	   когда дойдет до последнего page т.к api генерирует в next_url еще одну страницу
+	   вместо null !!!
+	   При показе 6 юзеров, api генерирует null в next_url на последней странице 
+	*/
 	const getUsers = link => {
 		store
 		.dispatch(usersActions.getUsers(link))
